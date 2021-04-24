@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_name" content="srcr">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="srcr">
+  <title>Srcom::Level - srcr master</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          srcr
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="srcr/Srcom" data-name="srcom">
+      <a href="../Srcom.html">Srcom</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="srcr/Srcom/Api" data-name="srcom::api">
+      <a href="../Srcom/Api.html">Api</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Categories" data-name="srcom::api::categories">
+      <a href="../Srcom/Api/Categories.html">Categories</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Developers" data-name="srcom::api::developers">
+      <a href="../Srcom/Api/Developers.html">Developers</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Engines" data-name="srcom::api::engines">
+      <a href="../Srcom/Api/Engines.html">Engines</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Games" data-name="srcom::api::games">
+      <a href="../Srcom/Api/Games.html">Games</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Gametypes" data-name="srcom::api::gametypes">
+      <a href="../Srcom/Api/Gametypes.html">Gametypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Genres" data-name="srcom::api::genres">
+      <a href="../Srcom/Api/Genres.html">Genres</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Guests" data-name="srcom::api::guests">
+      <a href="../Srcom/Api/Guests.html">Guests</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Leaderboards" data-name="srcom::api::leaderboards">
+      <a href="../Srcom/Api/Leaderboards.html">Leaderboards</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Levels" data-name="srcom::api::levels">
+      <a href="../Srcom/Api/Levels.html">Levels</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Notifications" data-name="srcom::api::notifications">
+      <a href="../Srcom/Api/Notifications.html">Notifications</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Platforms" data-name="srcom::api::platforms">
+      <a href="../Srcom/Api/Platforms.html">Platforms</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Profile" data-name="srcom::api::profile">
+      <a href="../Srcom/Api/Profile.html">Profile</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Publishers" data-name="srcom::api::publishers">
+      <a href="../Srcom/Api/Publishers.html">Publishers</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Regions" data-name="srcom::api::regions">
+      <a href="../Srcom/Api/Regions.html">Regions</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Runs" data-name="srcom::api::runs">
+      <a href="../Srcom/Api/Runs.html">Runs</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Series" data-name="srcom::api::series">
+      <a href="../Srcom/Api/Series.html">Series</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Users" data-name="srcom::api::users">
+      <a href="../Srcom/Api/Users.html">Users</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Variables" data-name="srcom::api::variables">
+      <a href="../Srcom/Api/Variables.html">Variables</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/APIError" data-name="srcom::apierror">
+      <a href="../Srcom/APIError.html">APIError</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/BulkGame" data-name="srcom::bulkgame">
+      <a href="../Srcom/BulkGame.html">BulkGame</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/BulkGame/Name" data-name="srcom::bulkgame::name">
+      <a href="../Srcom/BulkGame/Name.html">Name</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Categories" data-name="srcom::categories">
+      <a href="../Srcom/Categories.html">Categories</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Categories/Players" data-name="srcom::categories::players">
+      <a href="../Srcom/Categories/Players.html">Players</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Category" data-name="srcom::category">
+      <a href="../Srcom/Category.html">Category</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/CodeException" data-name="srcom::codeexception">
+      <a href="../Srcom/CodeException.html">CodeException</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Developer" data-name="srcom::developer">
+      <a href="../Srcom/Developer.html">Developer</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/EmbeddedCategoryConverter" data-name="srcom::embeddedcategoryconverter">
+      <a href="../Srcom/EmbeddedCategoryConverter.html">EmbeddedCategoryConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/EmbeddedLevelConverter" data-name="srcom::embeddedlevelconverter">
+      <a href="../Srcom/EmbeddedLevelConverter.html">EmbeddedLevelConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/EmbeddedPlatformConverter" data-name="srcom::embeddedplatformconverter">
+      <a href="../Srcom/EmbeddedPlatformConverter.html">EmbeddedPlatformConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/EmbeddedRegionConverter" data-name="srcom::embeddedregionconverter">
+      <a href="../Srcom/EmbeddedRegionConverter.html">EmbeddedRegionConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Engine" data-name="srcom::engine">
+      <a href="../Srcom/Engine.html">Engine</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Game" data-name="srcom::game">
+      <a href="../Srcom/Game.html">Game</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Game/Asset" data-name="srcom::game::asset">
+      <a href="../Srcom/Game/Asset.html">Asset</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Game/Assets" data-name="srcom::game::assets">
+      <a href="../Srcom/Game/Assets.html">Assets</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Game/Gametype" data-name="srcom::game::gametype">
+      <a href="../Srcom/Game/Gametype.html">Gametype</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Game/Name" data-name="srcom::game::name">
+      <a href="../Srcom/Game/Name.html">Name</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Game/Ruleset" data-name="srcom::game::ruleset">
+      <a href="../Srcom/Game/Ruleset.html">Ruleset</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Genre" data-name="srcom::genre">
+      <a href="../Srcom/Genre.html">Genre</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Guest" data-name="srcom::guest">
+      <a href="../Srcom/Guest.html">Guest</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/ISO8601Converter" data-name="srcom::iso8601converter">
+      <a href="../Srcom/ISO8601Converter.html">ISO8601Converter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Leaderboard" data-name="srcom::leaderboard">
+      <a href="../Srcom/Leaderboard.html">Leaderboard</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/LeaderboardRun" data-name="srcom::leaderboardrun">
+      <a href="../Srcom/LeaderboardRun.html">LeaderboardRun</a>
+      
+    </li>
+  
+  <li class=" current" data-id="srcr/Srcom/Level" data-name="srcom::level">
+      <a href="../Srcom/Level.html">Level</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Link" data-name="srcom::link">
+      <a href="../Srcom/Link.html">Link</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Notification" data-name="srcom::notification">
+      <a href="../Srcom/Notification.html">Notification</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Notification/Item" data-name="srcom::notification::item">
+      <a href="../Srcom/Notification/Item.html">Item</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/PBRun" data-name="srcom::pbrun">
+      <a href="../Srcom/PBRun.html">PBRun</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Platform" data-name="srcom::platform">
+      <a href="../Srcom/Platform.html">Platform</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Publisher" data-name="srcom::publisher">
+      <a href="../Srcom/Publisher.html">Publisher</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/RateLimiter" data-name="srcom::ratelimiter">
+      <a href="../Srcom/RateLimiter.html">RateLimiter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Region" data-name="srcom::region">
+      <a href="../Srcom/Region.html">Region</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Run" data-name="srcom::run">
+      <a href="../Srcom/Run.html">Run</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Run/SimpleSystem" data-name="srcom::run::simplesystem">
+      <a href="../Srcom/Run/SimpleSystem.html">SimpleSystem</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Splits" data-name="srcom::run::splits">
+      <a href="../Srcom/Run/Splits.html">Splits</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Status" data-name="srcom::run::status">
+      <a href="../Srcom/Run/Status.html">Status</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Run/Submission" data-name="srcom::run::submission">
+      <a href="../Srcom/Run/Submission.html">Submission</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Submission/Player" data-name="srcom::run::submission::player">
+      <a href="../Srcom/Run/Submission/Player.html">Player</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Submission/Variable" data-name="srcom::run::submission::variable">
+      <a href="../Srcom/Run/Submission/Variable.html">Variable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Times" data-name="srcom::run::times">
+      <a href="../Srcom/Run/Times.html">Times</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Run/Videos" data-name="srcom::run::videos">
+      <a href="../Srcom/Run/Videos.html">Videos</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Videos/Link" data-name="srcom::run::videos::link">
+      <a href="../Srcom/Run/Videos/Link.html">Link</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Series" data-name="srcom::series">
+      <a href="../Srcom/Series.html">Series</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/SimpleGame" data-name="srcom::simplegame">
+      <a href="../Srcom/SimpleGame.html">SimpleGame</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/SimplePlayer" data-name="srcom::simpleplayer">
+      <a href="../Srcom/SimplePlayer.html">SimplePlayer</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/SimpleRun" data-name="srcom::simplerun">
+      <a href="../Srcom/SimpleRun.html">SimpleRun</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/StatusException" data-name="srcom::statusexception">
+      <a href="../Srcom/StatusException.html">StatusException</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/User" data-name="srcom::user">
+      <a href="../Srcom/User.html">User</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/User/Country" data-name="srcom::user::country">
+      <a href="../Srcom/User/Country.html">Country</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/User/Location" data-name="srcom::user::location">
+      <a href="../Srcom/User/Location.html">Location</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/User/Name" data-name="srcom::user::name">
+      <a href="../Srcom/User/Name.html">Name</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/User/NameStyle" data-name="srcom::user::namestyle">
+      <a href="../Srcom/User/NameStyle.html">NameStyle</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/User/Region" data-name="srcom::user::region">
+      <a href="../Srcom/User/Region.html">Region</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Variable" data-name="srcom::variable">
+      <a href="../Srcom/Variable.html">Variable</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Variable/Scope" data-name="srcom::variable::scope">
+      <a href="../Srcom/Variable/Scope.html">Scope</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Variable/Values" data-name="srcom::variable::values">
+      <a href="../Srcom/Variable/Values.html">Values</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Variable/Values/Value" data-name="srcom::variable::values::value">
+      <a href="../Srcom/Variable/Values/Value.html">Value</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> Srcom::Level
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Srcom/Level.html">Srcom::Level</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Has shorthand methods to getting the resources that the <code><a href="../Srcom/Link.html">Link</a></code>s in <code><a href="../Srcom/Level.html#links:Array(Link)-instance-method">#links</a></code> point to.
+Does not cover the <code><a href="../Srcom/Link.html">Link</a></code>s to <code><a href="../Srcom/Category.html">Category</a></code>s and <code><a href="../Srcom/Variable.html">Variable</a></code>s, since those are already embedded.</p>
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L3" target="_blank">
+        srcr/mappings/level/level.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(pull:JSON::PullParser)-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#categories:Array(Category)-instance-method" class="signature"><strong>#categories</strong> : Array(Category)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#categories=(categories:Array(Category))-instance-method" class="signature"><strong>#categories=</strong>(categories : Array(Category))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#game:Game-instance-method" class="signature"><strong>#game</strong> : Game</a>
+        
+          <div class="summary"><p>Gets the <code><a href="../Srcom/Game.html">Game</a></code> that this <code><a href="../Srcom/Level.html">Level</a></code> belongs to.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id:String-instance-method" class="signature"><strong>#id</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id=(id:String)-instance-method" class="signature"><strong>#id=</strong>(id : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#links:Array(Link)-instance-method" class="signature"><strong>#links</strong> : Array(Link)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#links=(links:Array(Link))-instance-method" class="signature"><strong>#links=</strong>(links : Array(Link))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name:String-instance-method" class="signature"><strong>#name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#name=(name:String)-instance-method" class="signature"><strong>#name=</strong>(name : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rules:String?-instance-method" class="signature"><strong>#rules</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rules=(rules:String?)-instance-method" class="signature"><strong>#rules=</strong>(rules : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#runs(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Run)-instance-method" class="signature"><strong>#runs</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">200</span>) : Array(Run)</a>
+        
+          <div class="summary"><p>Gets all <code><a href="../Srcom/Run.html">Run</a></code>s completed for this <code><a href="../Srcom/Level.html">Level</a></code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variables:Array(Variable)-instance-method" class="signature"><strong>#variables</strong> : Array(Variable)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#variables=(variables:Array(Variable))-instance-method" class="signature"><strong>#variables=</strong>(variables : Array(Variable))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#weblink:String-instance-method" class="signature"><strong>#weblink</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#weblink=(weblink:String)-instance-method" class="signature"><strong>#weblink=</strong>(weblink : String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new(pull:JSON::PullParser)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="categories:Array(Category)-instance-method">
+      <div class="signature">
+        
+        def <strong>categories</strong> : Array(<a href="../Srcom/Category.html">Category</a>)
+
+        <a class="method-permalink" href="#categories:Array(Category)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="categories=(categories:Array(Category))-instance-method">
+      <div class="signature">
+        
+        def <strong>categories=</strong>(categories : Array(<a href="../Srcom/Category.html">Category</a>))
+
+        <a class="method-permalink" href="#categories=(categories:Array(Category))-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="game:Game-instance-method">
+      <div class="signature">
+        
+        def <strong>game</strong> : <a href="../Srcom/Game.html">Game</a>
+
+        <a class="method-permalink" href="#game:Game-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Gets the <code><a href="../Srcom/Game.html">Game</a></code> that this <code><a href="../Srcom/Level.html">Level</a></code> belongs to.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : String
+
+        <a class="method-permalink" href="#id:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id=(id:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(id : String)
+
+        <a class="method-permalink" href="#id=(id:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="links:Array(Link)-instance-method">
+      <div class="signature">
+        
+        def <strong>links</strong> : Array(<a href="../Srcom/Link.html">Link</a>)
+
+        <a class="method-permalink" href="#links:Array(Link)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="links=(links:Array(Link))-instance-method">
+      <div class="signature">
+        
+        def <strong>links=</strong>(links : Array(<a href="../Srcom/Link.html">Link</a>))
+
+        <a class="method-permalink" href="#links=(links:Array(Link))-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>name</strong> : String
+
+        <a class="method-permalink" href="#name:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="name=(name:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>name=</strong>(name : String)
+
+        <a class="method-permalink" href="#name=(name:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rules:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>rules</strong> : String?
+
+        <a class="method-permalink" href="#rules:String?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rules=(rules:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>rules=</strong>(rules : String?)
+
+        <a class="method-permalink" href="#rules=(rules:String?)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="runs(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Run)-instance-method">
+      <div class="signature">
+        
+        def <strong>runs</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">200</span>) : Array(<a href="../Srcom/Run.html">Run</a>)
+
+        <a class="method-permalink" href="#runs(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Run)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Gets all <code><a href="../Srcom/Run.html">Run</a></code>s completed for this <code><a href="../Srcom/Level.html">Level</a></code>.</p>
+
+<p>Defaults to getting all of them since there shouldn't be an absurd amount of `Run´s for
+a single <code><a href="../Srcom/Level.html">Level</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variables:Array(Variable)-instance-method">
+      <div class="signature">
+        
+        def <strong>variables</strong> : Array(<a href="../Srcom/Variable.html">Variable</a>)
+
+        <a class="method-permalink" href="#variables:Array(Variable)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="variables=(variables:Array(Variable))-instance-method">
+      <div class="signature">
+        
+        def <strong>variables=</strong>(variables : Array(<a href="../Srcom/Variable.html">Variable</a>))
+
+        <a class="method-permalink" href="#variables=(variables:Array(Variable))-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="weblink:String-instance-method">
+      <div class="signature">
+        
+        def <strong>weblink</strong> : String
+
+        <a class="method-permalink" href="#weblink:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="weblink=(weblink:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>weblink=</strong>(weblink : String)
+
+        <a class="method-permalink" href="#weblink=(weblink:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/fafc404f454be325e9bf16146c22e3b2885ee5af/src/srcr/mappings/level/level.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
