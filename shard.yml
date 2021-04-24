@@ -1,0 +1,8 @@
+name: srcr
+version: 0.1.0
+crystal: 1.0.0
+
+authors:
+  - badBlackShark <Timdaniel.Engelhardt@web.de>
+
+license: MIT
