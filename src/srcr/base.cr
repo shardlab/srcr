@@ -104,7 +104,6 @@ module Srcom
                 json = JSON.parse(response.body)
                 data += json["data"].as_a
                 page += 1
-                raise Socket::ConnectError.new if page == 79
               elsif response.status_code == 420
                 @@rate_limiter.global_rate_limit_exceeded
               else
