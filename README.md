@@ -1,3 +1,5 @@
+[![docs](https://img.shields.io/badge/docs-master-red.svg?style=flat-square)](https://shardlab.github.io/srcr/master/)
+
 # srcr
 
 `srcr` is a full-scale API wrapper for the [speedrun.com](https://www.speedrun.com) [API](https://github.com/speedruncomorg/api) written in [Crystal](https://crystal-lang.org/). The goal of this implementation is to provide as much data as possible / reasonable. As such, this library makes use of [embedding](https://github.com/speedruncomorg/api/blob/master/version1/embedding.md) wherever possible. Where something cannot be embedded for some reason, the library provides shorthand methods to request the data.
@@ -89,6 +91,10 @@ Most of the API is, at least for now, read-only and anonymous. For some endpoint
 ### API Inconsistencies
 
 The speedrun.com API has many things that are implemented in a weird, inconsistent, or undocumented way (for example, in certain contexts there can be a `Guest` with a `nil` name). Sometimes all of the three at the same time. This library tries to handle all of these as gracefully as possible. However, no guarantee can be given that every single possibly undocumented edge-case was thought of. If you encounter a `JSON::ParseError` please open an issue with the request you were trying to make, and what property couldn't be parsed.
+
+### Full Documentation
+
+The complete documentation for srcr is available here: https://shardlab.github.io/srcr/master/
 
 ## Contributing
 
