@@ -1,4 +1,4 @@
-[![docs](https://img.shields.io/badge/docs-master-red.svg?style=flat-square)](https://shardlab.github.io/srcr/master/)
+[![docs](https://img.shields.io/badge/docs-master-red.svg?style=flat-square)](https://srcr.shardlab.dev/master/)
 
 # srcr
 
@@ -94,7 +94,7 @@ The speedrun.com API has many things that are implemented in a weird, inconsiste
 
 ### Full Documentation
 
-The complete documentation for srcr is available here: https://shardlab.github.io/srcr/master/
+The complete documentation for srcr is available here: https://srcr.shardlab.dev/master/
 
 ## Contributing
 
