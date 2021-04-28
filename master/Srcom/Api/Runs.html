@@ -111,6 +111,11 @@
       
     </li>
   
+  <li class=" " data-id="srcr/Srcom/Api/PageIterator" data-name="srcom::api::pageiterator(t)">
+      <a href="../../Srcom/Api/PageIterator.html">PageIterator</a>
+      
+    </li>
+  
   <li class=" " data-id="srcr/Srcom/Api/Platforms" data-name="srcom::api::platforms">
       <a href="../../Srcom/Api/Platforms.html">Platforms</a>
       
@@ -543,7 +548,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/runs.cr#L1" target="_blank">
+      <a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/runs.cr#L1" target="_blank">
         srcr/apis/runs.cr
       </a>
     
@@ -607,14 +612,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#find_by(user:String?=nil,guest:String?=nil,examiner:String?=nil,game:String?=nil,level:String?=nil,category:String?=nil,platform:String?=nil,region:String?=nil,emulated:Bool=false,status:String?=nil,order_by:String?=nil,sort_direction:String?=nil,all_pages:Bool=false,max_results_per_page:Int32=20):Array(Run)-class-method" class="signature"><strong>.find_by</strong>(user : String? = <span class="n">nil</span>, guest : String? = <span class="n">nil</span>, examiner : String? = <span class="n">nil</span>, game : String? = <span class="n">nil</span>, level : String? = <span class="n">nil</span>, category : String? = <span class="n">nil</span>, platform : String? = <span class="n">nil</span>, region : String? = <span class="n">nil</span>, emulated : Bool = <span class="n">false</span>, status : String? = <span class="n">nil</span>, order_by : String? = <span class="n">nil</span>, sort_direction : String? = <span class="n">nil</span>, all_pages : Bool = <span class="n">false</span>, max_results_per_page : Int32 = <span class="n">20</span>) : Array(Run)</a>
+        <a href="#find_by(user:String?=nil,guest:String?=nil,examiner:String?=nil,game:String?=nil,level:String?=nil,category:String?=nil,platform:String?=nil,region:String?=nil,emulated:Bool=false,status:String?=nil,order_by:String?=nil,sort_direction:String?=nil,page_size:Int32=200):PageIterator(Run)-class-method" class="signature"><strong>.find_by</strong>(user : String? = <span class="n">nil</span>, guest : String? = <span class="n">nil</span>, examiner : String? = <span class="n">nil</span>, game : String? = <span class="n">nil</span>, level : String? = <span class="n">nil</span>, category : String? = <span class="n">nil</span>, platform : String? = <span class="n">nil</span>, region : String? = <span class="n">nil</span>, emulated : Bool = <span class="n">false</span>, status : String? = <span class="n">nil</span>, order_by : String? = <span class="n">nil</span>, sort_direction : String? = <span class="n">nil</span>, page_size : Int32 = <span class="n">200</span>) : PageIterator(Run)</a>
         
           <div class="summary"><p>Searches through all <code><a href="../../Srcom/Run.html">Run</a></code>s using the given query parameters.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#get_by_id(id:String):Srcom::Run-class-method" class="signature"><strong>.get_by_id</strong>(id : String) : Srcom::Run</a>
+        <a href="#find_by_id(id:String):Srcom::Run-class-method" class="signature"><strong>.find_by_id</strong>(id : String) : Srcom::Run</a>
         
           <div class="summary"><p>Gets a <code><a href="../../Srcom/Run.html">Run</a></code> given its <em>id</em>.</p></div>
         
@@ -708,7 +713,7 @@ to, or a global moderator.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/runs.cr#L170" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/runs.cr#L170" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -737,7 +742,7 @@ recommended to use the <code><a href="../../Srcom/Api/Runs.html#verify(id:String
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/runs.cr#L149" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/runs.cr#L149" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -762,17 +767,17 @@ to, or a global moderator.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/runs.cr#L184" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/runs.cr#L184" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="find_by(user:String?=nil,guest:String?=nil,examiner:String?=nil,game:String?=nil,level:String?=nil,category:String?=nil,platform:String?=nil,region:String?=nil,emulated:Bool=false,status:String?=nil,order_by:String?=nil,sort_direction:String?=nil,all_pages:Bool=false,max_results_per_page:Int32=20):Array(Run)-class-method">
+    <div class="entry-detail" id="find_by(user:String?=nil,guest:String?=nil,examiner:String?=nil,game:String?=nil,level:String?=nil,category:String?=nil,platform:String?=nil,region:String?=nil,emulated:Bool=false,status:String?=nil,order_by:String?=nil,sort_direction:String?=nil,page_size:Int32=200):PageIterator(Run)-class-method">
       <div class="signature">
         
-        def self.<strong>find_by</strong>(user : String? = <span class="n">nil</span>, guest : String? = <span class="n">nil</span>, examiner : String? = <span class="n">nil</span>, game : String? = <span class="n">nil</span>, level : String? = <span class="n">nil</span>, category : String? = <span class="n">nil</span>, platform : String? = <span class="n">nil</span>, region : String? = <span class="n">nil</span>, emulated : Bool = <span class="n">false</span>, status : String? = <span class="n">nil</span>, order_by : String? = <span class="n">nil</span>, sort_direction : String? = <span class="n">nil</span>, all_pages : Bool = <span class="n">false</span>, max_results_per_page : Int32 = <span class="n">20</span>) : Array(<a href="../../Srcom/Run.html">Run</a>)
+        def self.<strong>find_by</strong>(user : String? = <span class="n">nil</span>, guest : String? = <span class="n">nil</span>, examiner : String? = <span class="n">nil</span>, game : String? = <span class="n">nil</span>, level : String? = <span class="n">nil</span>, category : String? = <span class="n">nil</span>, platform : String? = <span class="n">nil</span>, region : String? = <span class="n">nil</span>, emulated : Bool = <span class="n">false</span>, status : String? = <span class="n">nil</span>, order_by : String? = <span class="n">nil</span>, sort_direction : String? = <span class="n">nil</span>, page_size : Int32 = <span class="n">200</span>) : <a href="../../Srcom/Api/PageIterator.html">PageIterator</a>(<a href="../../Srcom/Run.html">Run</a>)
 
-        <a class="method-permalink" href="#find_by(user:String?=nil,guest:String?=nil,examiner:String?=nil,game:String?=nil,level:String?=nil,category:String?=nil,platform:String?=nil,region:String?=nil,emulated:Bool=false,status:String?=nil,order_by:String?=nil,sort_direction:String?=nil,all_pages:Bool=false,max_results_per_page:Int32=20):Array(Run)-class-method">#</a>
+        <a class="method-permalink" href="#find_by(user:String?=nil,guest:String?=nil,examiner:String?=nil,game:String?=nil,level:String?=nil,category:String?=nil,platform:String?=nil,region:String?=nil,emulated:Bool=false,status:String?=nil,order_by:String?=nil,sort_direction:String?=nil,page_size:Int32=200):PageIterator(Run)-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -795,24 +800,25 @@ will return both runs that are done on an emulated and runs that done on a real 
 
 <p><span class="flag purple">NOTE</span>  Not specifying any filter probably leads to the request eventually crashing, leading to incomplete data.</p>
 
-<p><span class="flag purple">NOTE</span>  Since <code><a href="../../Srcom/Run.html">Run</a></code>s are very large objects this method defaults to very low results per page
-to give the request a reasonable speed and the best odds at the request suceeding.</p>
+<p><span class="flag purple">NOTE</span>  While <code><a href="../../Srcom/Run.html">Run</a></code>s are very large objects, using the maximum page size does usually work, and
+so that is what is defaulted to. If your requests are timing out or taking too long, try setting
+a smaller page size.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/runs.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/runs.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="get_by_id(id:String):Srcom::Run-class-method">
+    <div class="entry-detail" id="find_by_id(id:String):Srcom::Run-class-method">
       <div class="signature">
         
-        def self.<strong>get_by_id</strong>(id : String) : <a href="../../Srcom/Run.html">Srcom::Run</a>
+        def self.<strong>find_by_id</strong>(id : String) : <a href="../../Srcom/Run.html">Srcom::Run</a>
 
-        <a class="method-permalink" href="#get_by_id(id:String):Srcom::Run-class-method">#</a>
+        <a class="method-permalink" href="#find_by_id(id:String):Srcom::Run-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -823,7 +829,7 @@ to give the request a reasonable speed and the best odds at the request suceedin
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/runs.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/runs.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -848,7 +854,7 @@ to, or a global moderator.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/runs.cr#L131" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/runs.cr#L131" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -876,7 +882,7 @@ as many of them as possible.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/runs.cr#L104" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/runs.cr#L104" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -901,7 +907,7 @@ to, or a global moderator.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/runs.cr#L117" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/runs.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>

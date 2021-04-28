@@ -111,6 +111,11 @@
       
     </li>
   
+  <li class=" " data-id="srcr/Srcom/Api/PageIterator" data-name="srcom::api::pageiterator(t)">
+      <a href="../../Srcom/Api/PageIterator.html">PageIterator</a>
+      
+    </li>
+  
   <li class=" " data-id="srcr/Srcom/Api/Platforms" data-name="srcom::api::platforms">
       <a href="../../Srcom/Api/Platforms.html">Platforms</a>
       
@@ -543,7 +548,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/users.cr#L1" target="_blank">
+      <a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/users.cr#L1" target="_blank">
         srcr/apis/users.cr
       </a>
     
@@ -586,7 +591,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#find_by(lookup:String?=nil,name:String?=nil,twitch:String?=nil,hitbox:String?=nil,twitter:String?=nil,speedrunslive:String?=nil,order_by:String?=nil,sort_direction:String?=nil,all_pages:Bool=false,max_results_per_page:Int32=20):Array(User)-class-method" class="signature"><strong>.find_by</strong>(lookup : String? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, twitch : String? = <span class="n">nil</span>, hitbox : String? = <span class="n">nil</span>, twitter : String? = <span class="n">nil</span>, speedrunslive : String? = <span class="n">nil</span>, order_by : String? = <span class="n">nil</span>, sort_direction : String? = <span class="n">nil</span>, all_pages : Bool = <span class="n">false</span>, max_results_per_page : Int32 = <span class="n">20</span>) : Array(User)</a>
+        <a href="#find_by(lookup:String?=nil,name:String?=nil,twitch:String?=nil,hitbox:String?=nil,twitter:String?=nil,speedrunslive:String?=nil,order_by:String?=nil,sort_direction:String?=nil,page_size:Int32=200):PageIterator(User)-class-method" class="signature"><strong>.find_by</strong>(lookup : String? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, twitch : String? = <span class="n">nil</span>, hitbox : String? = <span class="n">nil</span>, twitter : String? = <span class="n">nil</span>, speedrunslive : String? = <span class="n">nil</span>, order_by : String? = <span class="n">nil</span>, sort_direction : String? = <span class="n">nil</span>, page_size : Int32 = <span class="n">200</span>) : PageIterator(User)</a>
         
           <div class="summary"><p>Searches through all <code><a href="../../Srcom/User.html">User</a></code>s using the given query parameters.</p></div>
         
@@ -602,7 +607,7 @@
       <li class="entry-summary">
         <a href="#get_pbs(id:String,top:Int32?=nil,series:String?=nil,game:String?=nil):Array(Srcom::PBRun)-class-method" class="signature"><strong>.get_pbs</strong>(id : String, top : Int32? = <span class="n">nil</span>, series : String? = <span class="n">nil</span>, game : String? = <span class="n">nil</span>) : Array(Srcom::PBRun)</a>
         
-          <div class="summary"><p>Gets the personal bests of the <code><a href="../../Srcom/User.html">User</a></code> with the given <em>id</em>, where <em>id</em> can be either a real ID or a user name.</p></div>
+          <div class="summary"><p>Gets the personal bests of the <code><a href="../../Srcom/User.html">User</a></code> with the given <em>id</em>, where <em>id</em> can be either a real ID or a username.</p></div>
         
       </li>
     
@@ -650,21 +655,21 @@
     Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="find_by(lookup:String?=nil,name:String?=nil,twitch:String?=nil,hitbox:String?=nil,twitter:String?=nil,speedrunslive:String?=nil,order_by:String?=nil,sort_direction:String?=nil,all_pages:Bool=false,max_results_per_page:Int32=20):Array(User)-class-method">
+    <div class="entry-detail" id="find_by(lookup:String?=nil,name:String?=nil,twitch:String?=nil,hitbox:String?=nil,twitter:String?=nil,speedrunslive:String?=nil,order_by:String?=nil,sort_direction:String?=nil,page_size:Int32=200):PageIterator(User)-class-method">
       <div class="signature">
         
-        def self.<strong>find_by</strong>(lookup : String? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, twitch : String? = <span class="n">nil</span>, hitbox : String? = <span class="n">nil</span>, twitter : String? = <span class="n">nil</span>, speedrunslive : String? = <span class="n">nil</span>, order_by : String? = <span class="n">nil</span>, sort_direction : String? = <span class="n">nil</span>, all_pages : Bool = <span class="n">false</span>, max_results_per_page : Int32 = <span class="n">20</span>) : Array(<a href="../../Srcom/User.html">User</a>)
+        def self.<strong>find_by</strong>(lookup : String? = <span class="n">nil</span>, name : String? = <span class="n">nil</span>, twitch : String? = <span class="n">nil</span>, hitbox : String? = <span class="n">nil</span>, twitter : String? = <span class="n">nil</span>, speedrunslive : String? = <span class="n">nil</span>, order_by : String? = <span class="n">nil</span>, sort_direction : String? = <span class="n">nil</span>, page_size : Int32 = <span class="n">200</span>) : <a href="../../Srcom/Api/PageIterator.html">PageIterator</a>(<a href="../../Srcom/User.html">User</a>)
 
-        <a class="method-permalink" href="#find_by(lookup:String?=nil,name:String?=nil,twitch:String?=nil,hitbox:String?=nil,twitter:String?=nil,speedrunslive:String?=nil,order_by:String?=nil,sort_direction:String?=nil,all_pages:Bool=false,max_results_per_page:Int32=20):Array(User)-class-method">#</a>
+        <a class="method-permalink" href="#find_by(lookup:String?=nil,name:String?=nil,twitch:String?=nil,hitbox:String?=nil,twitter:String?=nil,speedrunslive:String?=nil,order_by:String?=nil,sort_direction:String?=nil,page_size:Int32=200):PageIterator(User)-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Searches through all <code><a href="../../Srcom/User.html">User</a></code>s using the given query parameters.</p>
 
-<p>Using <em>lookups</em> performs an exact-match search across all user names, URLs and social profiles.</p>
+<p>Using <em>lookups</em> performs an exact-match search across all usernames, URLs and social profiles.</p>
 
-<p>Searching by <em>name</em> searches for the substring across user names and URLs.</p>
+<p>Searching by <em>name</em> searches for the substring across usernames and URLs.</p>
 
 <p>All other parameters search across users' names on the respective platform.</p>
 
@@ -683,7 +688,7 @@ searching across users is disabled on speedrun.com's side.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/users.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/users.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -704,7 +709,7 @@ searching across users is disabled on speedrun.com's side.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/users.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/users.cr#L78" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -720,7 +725,7 @@ searching across users is disabled on speedrun.com's side.</p>
         <div class="doc">
           
           <p>Gets the personal bests of the <code><a href="../../Srcom/User.html">User</a></code> with the given <em>id</em>, where <em>id</em> can be either a real ID
-or a user name.</p>
+or a username.</p>
 
 <p>Providing <em>top</em> will only return runs of rank <em>top</em> or better.</p>
 
@@ -731,7 +736,7 @@ of these can be provided as a real ID or their respective abbreviation.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/apis/users.cr#L92" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/apis/users.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>

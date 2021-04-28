@@ -111,6 +111,11 @@
       
     </li>
   
+  <li class=" " data-id="srcr/Srcom/Api/PageIterator" data-name="srcom::api::pageiterator(t)">
+      <a href="../Srcom/Api/PageIterator.html">PageIterator</a>
+      
+    </li>
+  
   <li class=" " data-id="srcr/Srcom/Api/Platforms" data-name="srcom::api::platforms">
       <a href="../Srcom/Api/Platforms.html">Platforms</a>
       
@@ -572,7 +577,7 @@ since those are already embedded.</p>
   </h2>
   
     
-      <a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L6" target="_blank">
+      <a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L6" target="_blank">
         srcr/mappings/game/game.cr
       </a>
     
@@ -662,7 +667,7 @@ since those are already embedded.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#derived_games(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Game)-instance-method" class="signature"><strong>#derived_games</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">200</span>) : Array(Game)</a>
+        <a href="#derived_games(page_size:Int32=200):Srcom::Api::PageIterator(Game)-instance-method" class="signature"><strong>#derived_games</strong>(page_size : Int32 = <span class="n">200</span>) : Srcom::Api::PageIterator(Game)</a>
         
           <div class="summary"><p>Returns all <code><a href="../Srcom/Game.html">Game</a></code>s derived from this <code><a href="../Srcom/Game.html">Game</a></code>.</p></div>
         
@@ -793,7 +798,7 @@ since those are already embedded.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#records(top:Int32=3,scope:String=&quot;all&quot;,miscellaneous:Bool=true,skip_empty:Bool=false,all_pages:Bool=true,max_results_per_page:Int32=200):Array(Leaderboard)-instance-method" class="signature"><strong>#records</strong>(top : Int32 = <span class="n">3</span>, scope : String = <span class="s">&quot;all&quot;</span>, miscellaneous : Bool = <span class="n">true</span>, skip_empty : Bool = <span class="n">false</span>, all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">200</span>) : Array(Leaderboard)</a>
+        <a href="#records(top:Int32=3,scope:String=&quot;all&quot;,miscellaneous:Bool=true,skip_empty:Bool=false,page_size:Int32=200):Srcom::Api::PageIterator(Leaderboard)-instance-method" class="signature"><strong>#records</strong>(top : Int32 = <span class="n">3</span>, scope : String = <span class="s">&quot;all&quot;</span>, miscellaneous : Bool = <span class="n">true</span>, skip_empty : Bool = <span class="n">false</span>, page_size : Int32 = <span class="n">200</span>) : Srcom::Api::PageIterator(Leaderboard)</a>
         
           <div class="summary"><p>Gets every <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code> with the <em>top</em> N runs for this <code><a href="../Srcom/Game.html">Game</a></code>, skipping over empty <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>s if <em>skip_empty</em> is <code>true</code>.</p></div>
         
@@ -850,7 +855,7 @@ since those are already embedded.</p>
       </li>
     
       <li class="entry-summary">
-        <a href="#runs(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Run)-instance-method" class="signature"><strong>#runs</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">200</span>) : Array(Run)</a>
+        <a href="#runs(page_size:Int32=200):Srcom::Api::PageIterator(Run)-instance-method" class="signature"><strong>#runs</strong>(page_size : Int32 = <span class="n">200</span>) : Srcom::Api::PageIterator(Run)</a>
         
           <div class="summary"><p>Gets all <code><a href="../Srcom/Run.html">Run</a></code>s completed in this <code><a href="../Srcom/Game.html">Game</a></code>.</p></div>
         
@@ -954,7 +959,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -984,7 +989,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1000,7 +1005,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1016,7 +1021,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1032,7 +1037,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L35" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L35" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1053,7 +1058,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L92" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1069,7 +1074,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1085,7 +1090,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1101,7 +1106,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1117,17 +1122,17 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="derived_games(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Game)-instance-method">
+    <div class="entry-detail" id="derived_games(page_size:Int32=200):Srcom::Api::PageIterator(Game)-instance-method">
       <div class="signature">
         
-        def <strong>derived_games</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">200</span>) : Array(<a href="../Srcom/Game.html">Game</a>)
+        def <strong>derived_games</strong>(page_size : Int32 = <span class="n">200</span>) : <a href="../Srcom/Api/PageIterator.html">Srcom::Api::PageIterator</a>(<a href="../Srcom/Game.html">Game</a>)
 
-        <a class="method-permalink" href="#derived_games(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Game)-instance-method">#</a>
+        <a class="method-permalink" href="#derived_games(page_size:Int32=200):Srcom::Api::PageIterator(Game)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1138,7 +1143,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L104" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L103" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1154,7 +1159,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1170,7 +1175,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1186,7 +1191,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1202,7 +1207,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1218,7 +1223,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1234,7 +1239,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1250,7 +1255,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1266,7 +1271,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1282,7 +1287,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1298,7 +1303,7 @@ since those are already embedded.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1320,7 +1325,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L110" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L109" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1336,7 +1341,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1352,7 +1357,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1368,7 +1373,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1384,7 +1389,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1400,7 +1405,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1416,7 +1421,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L33" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1439,7 +1444,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L47" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L47" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1455,7 +1460,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1471,7 +1476,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1487,7 +1492,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1503,7 +1508,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1519,7 +1524,7 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1535,17 +1540,17 @@ on speedrun.com.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="records(top:Int32=3,scope:String=&quot;all&quot;,miscellaneous:Bool=true,skip_empty:Bool=false,all_pages:Bool=true,max_results_per_page:Int32=200):Array(Leaderboard)-instance-method">
+    <div class="entry-detail" id="records(top:Int32=3,scope:String=&quot;all&quot;,miscellaneous:Bool=true,skip_empty:Bool=false,page_size:Int32=200):Srcom::Api::PageIterator(Leaderboard)-instance-method">
       <div class="signature">
         
-        def <strong>records</strong>(top : Int32 = <span class="n">3</span>, scope : String = <span class="s">&quot;all&quot;</span>, miscellaneous : Bool = <span class="n">true</span>, skip_empty : Bool = <span class="n">false</span>, all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">200</span>) : Array(<a href="../Srcom/Leaderboard.html">Leaderboard</a>)
+        def <strong>records</strong>(top : Int32 = <span class="n">3</span>, scope : String = <span class="s">&quot;all&quot;</span>, miscellaneous : Bool = <span class="n">true</span>, skip_empty : Bool = <span class="n">false</span>, page_size : Int32 = <span class="n">200</span>) : <a href="../Srcom/Api/PageIterator.html">Srcom::Api::PageIterator</a>(<a href="../Srcom/Leaderboard.html">Leaderboard</a>)
 
-        <a class="method-permalink" href="#records(top:Int32=3,scope:String=&quot;all&quot;,miscellaneous:Bool=true,skip_empty:Bool=false,all_pages:Bool=true,max_results_per_page:Int32=200):Array(Leaderboard)-instance-method">#</a>
+        <a class="method-permalink" href="#records(top:Int32=3,scope:String=&quot;all&quot;,miscellaneous:Bool=true,skip_empty:Bool=false,page_size:Int32=200):Srcom::Api::PageIterator(Leaderboard)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1566,7 +1571,7 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L70" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1582,7 +1587,7 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1598,7 +1603,7 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1614,7 +1619,7 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1630,7 +1635,7 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1646,7 +1651,7 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1662,7 +1667,7 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1678,7 +1683,7 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1694,7 +1699,7 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1710,7 +1715,7 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1726,17 +1731,17 @@ truly that many <code><a href="../Srcom/Leaderboard.html">Leaderboard</a></code>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="runs(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Run)-instance-method">
+    <div class="entry-detail" id="runs(page_size:Int32=200):Srcom::Api::PageIterator(Run)-instance-method">
       <div class="signature">
         
-        def <strong>runs</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">200</span>) : Array(<a href="../Srcom/Run.html">Run</a>)
+        def <strong>runs</strong>(page_size : Int32 = <span class="n">200</span>) : <a href="../Srcom/Api/PageIterator.html">Srcom::Api::PageIterator</a>(<a href="../Srcom/Run.html">Run</a>)
 
-        <a class="method-permalink" href="#runs(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Run)-instance-method">#</a>
+        <a class="method-permalink" href="#runs(page_size:Int32=200):Srcom::Api::PageIterator(Run)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -1750,7 +1755,7 @@ a single <code><a href="../Srcom/Game.html">Game</a></code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L55" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1773,7 +1778,7 @@ a single <code><a href="../Srcom/Game.html">Game</a></code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L82" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L81" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1789,7 +1794,7 @@ a single <code><a href="../Srcom/Game.html">Game</a></code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1805,7 +1810,7 @@ a single <code><a href="../Srcom/Game.html">Game</a></code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1821,7 +1826,7 @@ a single <code><a href="../Srcom/Game.html">Game</a></code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1837,7 +1842,7 @@ a single <code><a href="../Srcom/Game.html">Game</a></code>.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/game/game.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/game/game.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>

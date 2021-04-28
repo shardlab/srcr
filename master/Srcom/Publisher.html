@@ -111,6 +111,11 @@
       
     </li>
   
+  <li class=" " data-id="srcr/Srcom/Api/PageIterator" data-name="srcom::api::pageiterator(t)">
+      <a href="../Srcom/Api/PageIterator.html">PageIterator</a>
+      
+    </li>
+  
   <li class=" " data-id="srcr/Srcom/Api/Platforms" data-name="srcom::api::platforms">
       <a href="../Srcom/Api/Platforms.html">Platforms</a>
       
@@ -568,7 +573,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/publisher/publisher.cr#L2" target="_blank">
+      <a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/publisher/publisher.cr#L2" target="_blank">
         srcr/mappings/publisher/publisher.cr
       </a>
     
@@ -611,7 +616,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#games(all_pages:Bool=true,max_results_per_page:Int32=20):Array(Game)-instance-method" class="signature"><strong>#games</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">20</span>) : Array(Game)</a>
+        <a href="#games(page_size:Int32=20):Srcom::Api::PageIterator(Game)-instance-method" class="signature"><strong>#games</strong>(page_size : Int32 = <span class="n">20</span>) : Srcom::Api::PageIterator(Game)</a>
         
           <div class="summary"><p>Gets all the <code><a href="../Srcom/Game.html">Game</a></code>s published by this <code><a href="../Srcom/Publisher.html">Publisher</a></code>.</p></div>
         
@@ -718,7 +723,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/publisher/publisher.cr#L3" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/publisher/publisher.cr#L3" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -737,12 +742,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="games(all_pages:Bool=true,max_results_per_page:Int32=20):Array(Game)-instance-method">
+    <div class="entry-detail" id="games(page_size:Int32=20):Srcom::Api::PageIterator(Game)-instance-method">
       <div class="signature">
         
-        def <strong>games</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">20</span>) : Array(<a href="../Srcom/Game.html">Game</a>)
+        def <strong>games</strong>(page_size : Int32 = <span class="n">20</span>) : <a href="../Srcom/Api/PageIterator.html">Srcom::Api::PageIterator</a>(<a href="../Srcom/Game.html">Game</a>)
 
-        <a class="method-permalink" href="#games(all_pages:Bool=true,max_results_per_page:Int32=20):Array(Game)-instance-method">#</a>
+        <a class="method-permalink" href="#games(page_size:Int32=20):Srcom::Api::PageIterator(Game)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -755,7 +760,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/publisher/publisher.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/publisher/publisher.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -771,7 +776,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/publisher/publisher.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/publisher/publisher.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -787,7 +792,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/publisher/publisher.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/publisher/publisher.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -803,7 +808,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/publisher/publisher.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/publisher/publisher.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -819,7 +824,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/publisher/publisher.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/publisher/publisher.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -835,7 +840,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/publisher/publisher.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/publisher/publisher.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -851,7 +856,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/publisher/publisher.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/publisher/publisher.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>

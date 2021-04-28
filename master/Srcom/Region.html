@@ -111,6 +111,11 @@
       
     </li>
   
+  <li class=" " data-id="srcr/Srcom/Api/PageIterator" data-name="srcom::api::pageiterator(t)">
+      <a href="../Srcom/Api/PageIterator.html">PageIterator</a>
+      
+    </li>
+  
   <li class=" " data-id="srcr/Srcom/Api/Platforms" data-name="srcom::api::platforms">
       <a href="../Srcom/Api/Platforms.html">Platforms</a>
       
@@ -568,7 +573,7 @@
   </h2>
   
     
-      <a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/region/region.cr#L2" target="_blank">
+      <a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/region/region.cr#L2" target="_blank">
         srcr/mappings/region/region.cr
       </a>
     
@@ -611,7 +616,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#games(all_pages:Bool=true,max_results_per_page:Int32=20):Array(Game)-instance-method" class="signature"><strong>#games</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">20</span>) : Array(Game)</a>
+        <a href="#games(page_size:Int32=20):Srcom::Api::PageIterator(Game)-instance-method" class="signature"><strong>#games</strong>(page_size : Int32 = <span class="n">20</span>) : Srcom::Api::PageIterator(Game)</a>
         
           <div class="summary"><p>Gets all the <code><a href="../Srcom/Game.html">Game</a></code>s playable in this <code><a href="../Srcom/Region.html">Region</a></code>.</p></div>
         
@@ -648,7 +653,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#runs(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Run)-instance-method" class="signature"><strong>#runs</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">200</span>) : Array(Run)</a>
+        <a href="#runs(page_size:Int32=200):Srcom::Api::PageIterator(Run)-instance-method" class="signature"><strong>#runs</strong>(page_size : Int32 = <span class="n">200</span>) : Srcom::Api::PageIterator(Run)</a>
         
           <div class="summary"><p>Gets all <code><a href="../Srcom/Run.html">Run</a></code>s completed while playing on this <code><a href="../Srcom/Platform.html">Platform</a></code>.</p></div>
         
@@ -725,7 +730,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/region/region.cr#L3" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/region/region.cr#L3" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -744,12 +749,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="games(all_pages:Bool=true,max_results_per_page:Int32=20):Array(Game)-instance-method">
+    <div class="entry-detail" id="games(page_size:Int32=20):Srcom::Api::PageIterator(Game)-instance-method">
       <div class="signature">
         
-        def <strong>games</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">20</span>) : Array(<a href="../Srcom/Game.html">Game</a>)
+        def <strong>games</strong>(page_size : Int32 = <span class="n">20</span>) : <a href="../Srcom/Api/PageIterator.html">Srcom::Api::PageIterator</a>(<a href="../Srcom/Game.html">Game</a>)
 
-        <a class="method-permalink" href="#games(all_pages:Bool=true,max_results_per_page:Int32=20):Array(Game)-instance-method">#</a>
+        <a class="method-permalink" href="#games(page_size:Int32=20):Srcom::Api::PageIterator(Game)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -762,7 +767,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/region/region.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/region/region.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -778,7 +783,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/region/region.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/region/region.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -794,7 +799,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/region/region.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/region/region.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -810,7 +815,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/region/region.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/region/region.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -826,7 +831,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/region/region.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/region/region.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -842,7 +847,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/region/region.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/region/region.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -858,30 +863,30 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/region/region.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/region/region.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="runs(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Run)-instance-method">
+    <div class="entry-detail" id="runs(page_size:Int32=200):Srcom::Api::PageIterator(Run)-instance-method">
       <div class="signature">
         
-        def <strong>runs</strong>(all_pages : Bool = <span class="n">true</span>, max_results_per_page : Int32 = <span class="n">200</span>) : Array(<a href="../Srcom/Run.html">Run</a>)
+        def <strong>runs</strong>(page_size : Int32 = <span class="n">200</span>) : <a href="../Srcom/Api/PageIterator.html">Srcom::Api::PageIterator</a>(<a href="../Srcom/Run.html">Run</a>)
 
-        <a class="method-permalink" href="#runs(all_pages:Bool=true,max_results_per_page:Int32=200):Array(Run)-instance-method">#</a>
+        <a class="method-permalink" href="#runs(page_size:Int32=200):Srcom::Api::PageIterator(Run)-instance-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Gets all <code><a href="../Srcom/Run.html">Run</a></code>s completed while playing on this <code><a href="../Srcom/Platform.html">Platform</a></code>.</p>
 
-<p><span class="flag purple">NOTE</span>  Depending on the <code><a href="../Srcom/Region.html">Region</a></code> this request almost definitely crashes at some point.</p>
+<p><span class="flag purple">NOTE</span>  Depending on the <code><a href="../Srcom/Region.html">Region</a></code> trying to get all <code><a href="../Srcom/Run.html">Run</a></code>s almost definitely crashes at some point.</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/shardlab/srcr/blob/e1f97d2a6746f7f06b340822273505d71d70dae8/src/srcr/mappings/region/region.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/shardlab/srcr/blob/6f925a25d74e68c37544f006761be6d340ab872c/src/srcr/mappings/region/region.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>

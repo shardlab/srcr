@@ -111,6 +111,11 @@
       
     </li>
   
+  <li class=" " data-id="srcr/Srcom/Api/PageIterator" data-name="srcom::api::pageiterator(t)">
+      <a href="Srcom/Api/PageIterator.html">PageIterator</a>
+      
+    </li>
+  
   <li class=" " data-id="srcr/Srcom/Api/Platforms" data-name="srcom::api::platforms">
       <a href="Srcom/Api/Platforms.html">Platforms</a>
       
@@ -552,19 +557,19 @@
 
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;srcr&quot;</span>
 
-games <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Games</span>.find_by(name: <span class="s">&quot;Super Mario 64&quot;</span>) <span class="c">#=&gt; Array(Game)</span>
+games <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Games</span>.find_by(name: <span class="s">&quot;Super Mario 64&quot;</span>) <span class="c"># =&gt; Array(Game)</span>
 
 <span class="c"># or</span>
 
-games <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Games</span>.find_by(abbreviation: <span class="s">&quot;sm64&quot;</span>) <span class="c">#=&gt; Array(Game)</span>
+games <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Games</span>.find_by(abbreviation: <span class="s">&quot;sm64&quot;</span>) <span class="c"># =&gt; Array(Game)</span>
 
 <span class="c"># or</span>
 
-game <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Games</span>.find_by_id(<span class="s">&quot;sm64&quot;</span>) <span class="c">#=&gt; Game</span>
+game <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Games</span>.find_by_id(<span class="s">&quot;sm64&quot;</span>) <span class="c"># =&gt; Game</span>
 
 <span class="c"># or</span>
 
-game <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Games</span>.find_by_id(<span class="s">&quot;o1y9wo6q&quot;</span>) <span class="c">#=&gt; Game</span></code></pre>
+game <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Games</span>.find_by_id(<span class="s">&quot;o1y9wo6q&quot;</span>) <span class="c"># =&gt; Game</span></code></pre>
 
 <h3><a id="i-ds-and-abbreviations" class="anchor" href="#i-ds-and-abbreviations">
   <svg class="octicon-link" aria-hidden="true">
@@ -581,20 +586,39 @@ Try to avoid actually making use of this though, as the redirect will count towa
   </svg>
 </a>Pagination</h3>
 
-<p>A lot of the resources available through the API are <a href="https://github.com/speedruncomorg/api/blob/master/version1/pagination.md">paginated</a> with a maximum amount of 200 elements per page (except bulk game requests, which are capped at 1000 elements per page). For all of those endpoints srcr gives you full control but tries to set sensible defaults.
+<p>A lot of the resources available through the API are <a href="https://github.com/speedruncomorg/api/blob/master/version1/pagination.md">paginated</a> with a maximum amount of 200 elements per page (except bulk game requests, which are capped at 1000 elements per page). To minimize network usage all of these resources use a custom <a href="https://srcr.shardlab.dev/master/Srcom/Api/PageIterator.html"><code>PageIterator</code></a> which will only request the pages that you actually need. See its documentation for details on how to use it.
+For all paginated endpoints srcr gives you full control over the page size but tries to set sensible defaults.
 Let's try to do look for newly submitted runs as an example:</p>
 
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;srcr&quot;</span>
 
-<span class="c"># This gets the 20 most recently submitted runs</span>
-runs <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Runs</span>.find_by(status: <span class="s">&quot;new&quot;</span>, order_by: <span class="s">&quot;verify-date&quot;</span>, sort_direction: <span class="s">&quot;desc&quot;</span>) <span class="c">#=&gt; Array(Run)</span>
+<span class="c"># This gets the 250 most recently submitted runs</span>
 
-<span class="c"># If we want to get all currently unverified runs we have to tell the method to do so</span>
-runs <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Runs</span>.find_by(status: <span class="s">&quot;new&quot;</span>, all_pages: <span class="n">true</span>, max_results_per_page: <span class="n">200</span>) <span class="c">#=&gt; Array(Run)</span></code></pre>
+<span class="c"># First, get an iterator</span>
+runs <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Runs</span>.find_by(status: <span class="s">&quot;new&quot;</span>, order_by: <span class="s">&quot;verify-date&quot;</span>, sort_direction: <span class="s">&quot;desc&quot;</span>) <span class="c"># =&gt; PageIterator(Run)</span>
 
-<p>Do note that trying to get a lot of very large objects at once (namely <code>Run</code>s and especially <code>Game</code>s) can lead to the request timing out or speedrun.com throwing a 503 error. Usually <code>Run</code>s work out, but even if it goes at the expense of having to do more request try setting lower values for <code>max_results_per_page</code>.
+<span class="c"># Now, get the first 250 runs from that iterator</span>
+runs <span class="o">=</span> runs.first(<span class="n">250</span>).to_a <span class="c"># =&gt; Array(Run)</span>
+
+
+
+<span class="c"># If we want to get all currently unverified runs simply call `.to_a` immediately</span>
+
+<span class="c"># First, get an iterator again</span>
+runs <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Runs</span>.find_by(status: <span class="s">&quot;new&quot;</span>, page_size: <span class="n">200</span>) <span class="c"># =&gt; PageIterator(Run)</span>
+<span class="c"># Now simply call `to_a`</span>
+runs <span class="o">=</span> runs.to_a <span class="c"># =&gt; Array(Run)</span></code></pre>
+
+<p>For another example, let's try to find the internal ID speedrun.com assigns to the PC platform:</p>
+
+<pre><code class="language-crystal"><span class="c"># Since we know for a fact speedrun.com has a platform named PC, we can use `.not_nil!`</span>
+pc_id <span class="o">=</span> <span class="t">Srcom</span><span class="t">::</span><span class="t">Api</span><span class="t">::</span><span class="t">Platforms</span>.get().find { <span class="o">|</span>platform<span class="o">|</span> platform.name <span class="o">==</span> <span class="s">&quot;PC&quot;</span> }.not_nil!.id</code></pre>
+
+<p>Since the <code>PageIterator</code> only requests pages when elements from them are actually asked for, it only keeps requesting pages here until the platform "PC" has been found, not all of them.</p>
+
+<p>Do note that trying to get a lot of very large objects at once (namely <code>Run</code>s and especially <code>Game</code>s) can lead to the request timing out or speedrun.com throwing a 503 error. Usually <code>Run</code>s work out, but even if it goes at the expense of having to do more request try setting lower values for <code>page_size</code>.
 Whenever you make a paginated request expect it to take a very long time, especially if that request wasn't made recently and speedrun.com doesn't have it cached. For reference, trying to get all unverified runs might very well take several minutes.
-If a paginated request does crash for some reason, the wrapper will abort and return all the data it has gotten so far.</p>
+If a paginated request does crash for some reason, the <code>PageIterator</code> will simply use the data it has. It also sets an internal flag so you know that something during the request went wrong. For more details see <a href="https://srcr.shardlab.dev/master/Srcom/Api/PageIterator.html">the <code>PageIterator</code>'s documentation</a>.</p>
 
 <h3><a id="resources-that-arent-embedded" class="anchor" href="#resources-that-arent-embedded">
   <svg class="octicon-link" aria-hidden="true">
