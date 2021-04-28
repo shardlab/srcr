@@ -88,7 +88,7 @@ class Srcom::Api::Runs
   end
 
   # Gets a `Run` given its *id*.
-  def self.get_by_id(id : String) : Srcom::Run
+  def self.find_by_id(id : String) : Srcom::Run
     id = URI.encode(id)
     return Run.from_json(request_single_run(id).to_json)
   end
