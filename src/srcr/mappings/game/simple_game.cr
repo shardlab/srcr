@@ -39,8 +39,8 @@ struct Srcom::SimpleGame
   end
 
   # Gets the full `Gametype`s applicable to this game.
-  def full_gametypes : Array(Gametype)
-    gametypes = Array(Gametype).new
+  def full_gametypes : Array(Game::Gametype)
+    gametypes = Array(Game::Gametype).new
     @gametypes.each do |id|
       gametypes << Srcom::Api::Gametypes.find_by_id(id)
     end
@@ -122,8 +122,8 @@ struct Srcom::SimpleGame
   #
   # Defaults to getting all of them since there shouldn't be an absurd amount of `Run´s in
   # a single `Game`.
-  def runs(all_pages : Bool = true, max_results_per_page : Int32 = 200) : Array(Run)
-    Srcom::Api::Runs.find_by(game: @id, all_pages: all_pages, max_results_per_page: max_results_per_page)
+  def runs(page_size : Int32 = 200) : Srcom::Api::PageIterator(Run)
+    Srcom::Api::Runs.find_by(game: @id, page_size: page_size)
   end
 
   # Gets all the `Level`s belonging to this game.
@@ -148,17 +148,13 @@ struct Srcom::SimpleGame
   # be returned. If it is set to `true` `Leaderboard`s for both miscellaneous and non-miscellaneous
   # categories will be returned.
   #
-  # This method defaults to getting everything, as it is doubtful a single `Game` will have
-  # truly that many `Leaderboard`s.
-  #
   # NOTE: This can result in more than N runs per `Leaderboard`, as ties can occur.
   def records(top : Int32 = 3,
               scope : String = "all",
               miscellaneous : Bool = true,
               skip_empty : Bool = false,
-              all_pages : Bool = true,
-              max_results_per_page : Int32 = 200) : Array(Leaderboard)
-    Srcom::Api::Games.get_records(@id, top, scope, miscellaneous, skip_empty, all_pages, max_results_per_page)
+              page_size : Int32 = 200) : Srcom::Api::PageIterator(Leaderboard)
+    Srcom::Api::Games.get_records(@id, top, scope, miscellaneous, skip_empty, page_size)
   end
 
   # Gets all the `Series` this `Game` belongs to, if it belongs to any.
@@ -186,8 +182,8 @@ struct Srcom::SimpleGame
   end
 
   # Returns all `Game`s derived from this `Game`.
-  def derived_games(all_pages : Bool = true, max_results_per_page : Int32 = 200) : Array(Game)
-    return Srcom::Api::Games.get_derived_games(@id, all_pages: all_pages, max_results_per_page: max_results_per_page)
+  def derived_games(page_size : Int32 = 200) : Srcom::Api::PageIterator(Game)
+    return Srcom::Api::Games.get_derived_games(@id, page_size: page_size)
   end
 
   # Returns the `Leaderboard` for the `Category` that is first shown when this `Game` is visited

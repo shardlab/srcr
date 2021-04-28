@@ -17,8 +17,7 @@ class Srcom::Api::Series
                    moderator : String? = nil,
                    order_by : String? = nil,
                    sort_direction : String? = nil,
-                   all_pages : Bool = false,
-                   max_results_per_page : Int32 = 20) : Array(Srcom::Series)
+                   page_size : Int32 = 200) : PageIterator(Srcom::Series)
     options = Hash(String, String).new
     options["name"] = URI.encode(name) if name
     options["abbreviation"] = URI.encode(abbreviation) if abbreviation
@@ -46,14 +45,14 @@ class Srcom::Api::Series
       end
     end
 
-    if max_results_per_page > 200
-      max_results_per_page = 200
+    if page_size > 200
+      page_size = 200
       Log.warn { "[/series] Only up to 200 results per page in non bulk request are supported. Request adjusted." }
     end
 
-    options["max"] = max_results_per_page.to_s
+    options["max"] = page_size.to_s
 
-    request_series(options, all_pages).map { |raw| Srcom::Series.from_json(raw.to_json) }
+    request_series(options)
   end
 
   # Finds a `Series` given its *id* or abbreviation.
@@ -79,7 +78,7 @@ class Srcom::Api::Series
   # Possible values for *sort_direction*: "desc" or "asc", with the default being "asc".
   #
   # NOTE: Since `Series` typically don't have too many games in them it is very much feasible to get
-  # everything here, and so that is what is defaulted to.
+  # everything here, but only when requested in smaller chunks, so that is what is defaulted to.
   def self.get_games(id : String,
                      name : String? = nil,
                      abbreviation : String? = nil,
@@ -92,10 +91,9 @@ class Srcom::Api::Series
                      developer : String? = nil,
                      publisher : String? = nil,
                      moderator : String? = nil,
-                     all_pages : Bool = true,
                      order_by : String? = nil,
                      sort_direction : String? = nil,
-                     max_results_per_page : Int32 = 20) : Array(Game)
+                     page_size : Int32 = 20) : PageIterator(Game)
     options = Hash(String, String).new
     options["name"] = URI.encode(name) if name
     options["abbreviation"] = URI.encode(abbreviation) if abbreviation
@@ -110,6 +108,8 @@ class Srcom::Api::Series
     options["moderator"] = URI.encode(moderator) if moderator
 
     order = case order_by
+            when Nil
+              # Do nothing
             when "name_jap", "namejap", "name-jap", "name.jap"
               "name.jap"
             when "name_int", "nameint", "name-int", "name.int"
@@ -131,14 +131,14 @@ class Srcom::Api::Series
       end
     end
 
-    if max_results_per_page > 200
-      max_results_per_page = 200
+    if page_size > 200
+      page_size = 200
       Log.warn { "[/series/<id>/games] Only up to 200 results per page in non bulk request are supported. Request adjusted." }
     end
 
-    options["max"] = max_results_per_page.to_s
+    options["max"] = page_size.to_s
 
-    return request_series_games(id, options, all_pages).map { |raw| Game.from_json(raw.to_json) }
+    return request_series_games(id, options)
   end
 
   # Searches through all the games in the `Series` given by its *id* or abbreviation
@@ -168,10 +168,9 @@ class Srcom::Api::Series
                           developer : String? = nil,
                           publisher : String? = nil,
                           moderator : String? = nil,
-                          all_pages : Bool = true,
                           order_by : String? = nil,
                           sort_direction : String? = nil,
-                          max_results_per_page : Int32 = 1000) : Array(BulkGame)
+                          page_size : Int32 = 1000) : PageIterator(BulkGame)
     options = Hash(String, String).new
     options["name"] = URI.encode(name) if name
     options["abbreviation"] = URI.encode(abbreviation) if abbreviation
@@ -209,21 +208,29 @@ class Srcom::Api::Series
       end
     end
 
-    if max_results_per_page > 1000
-      max_results_per_page = 1000
+    if page_size > 1000
+      page_size = 1000
       Log.warn { "[/series/<id>/games?_bulk=true] Only up to 1000 results per page in bulk request are supported. Request adjusted." }
     end
 
-    options["max"] = max_results_per_page.to_s
+    options["max"] = page_size.to_s
 
-    return request_series_games_bulk(id, options, all_pages, max_results_per_page).map { |raw| BulkGame.from_json(raw.to_json) }
+    return request_series_games_bulk(id, options)
   end
 
-  protected def self.request_series(options : Hash(String, String), all_pages : Bool)
+  protected def self.request_series(options : Hash(String, String))
     params = URI::Params.encode(options)
     url = "#{BASE_URL}series?embed=moderators&#{params}"
 
-    return Api.request("/series", url, "GET", all_pages: all_pages)
+    data, next_page_uri = Api.request("/series", url, "GET")
+    elements = data.map { |raw| Srcom::Series.from_json(raw.to_json) }
+    return PageIterator(Srcom::Series).new(
+      endpoint: "/series",
+      method: "GET",
+      headers: nil,
+      body: nil,
+      next_page_uri: next_page_uri,
+      elements: elements)
   end
 
   protected def self.request_single_series(id : String)
@@ -232,17 +239,33 @@ class Srcom::Api::Series
     return Api.request_single_item("/series/#{id}", url, "GET")
   end
 
-  protected def self.request_series_games(id : String, options : Hash(String, String), all_pages : Bool)
+  protected def self.request_series_games(id : String, options : Hash(String, String))
     params = URI::Params.encode(options)
     url = "#{BASE_URL}series/#{id}/games?embed=gametypes,moderators,platforms,regions,genres,engines,developers,publishers,categories.variables,categories.game,variables,levels.categories.variables,levels.variables,levels.categories.game&#{params}"
 
-    return Api.request("/series/#{id}/games", url, "GET", all_pages: all_pages)
+    data, next_page_uri = Api.request("/series/#{id}/games", url, "GET")
+    elements = data.map { |raw| Game.from_json(raw.to_json) }
+    return PageIterator(Game).new(
+      endpoint: "/series/#{id}/games",
+      method: "GET",
+      headers: nil,
+      body: nil,
+      next_page_uri: next_page_uri,
+      elements: elements)
   end
 
-  protected def self.request_series_games_bulk(id : String, options : Hash(String, String), all_pages : Bool)
+  protected def self.request_series_games_bulk(id : String, options : Hash(String, String))
     params = URI::Params.encode(options)
     url = "#{BASE_URL}series/#{id}/games?_bulk=true&#{params}"
 
-    return Api.request("/series/#{id}/games?_bulk=true", url, "GET", all_pages: all_pages)
+    data, next_page_uri = Api.request("/series/#{id}/games?_bulk=true", url, "GET")
+    elements = data.map { |raw| BulkGame.from_json(raw.to_json) }
+    return PageIterator(BulkGame).new(
+      endpoint: "/series/#{id}/games?_bulk=true",
+      method: "GET",
+      headers: nil,
+      body: nil,
+      next_page_uri: next_page_uri,
+      elements: elements)
   end
 end

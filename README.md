@@ -29,19 +29,19 @@ As an example, to find Super Mario 64 we would use the `Srcom::Api::Games` class
 ```crystal
 require "srcr"
 
-games = Srcom::Api::Games.find_by(name: "Super Mario 64") #=> Array(Game)
+games = Srcom::Api::Games.find_by(name: "Super Mario 64") # => Array(Game)
 
 # or
 
-games = Srcom::Api::Games.find_by(abbreviation: "sm64") #=> Array(Game)
+games = Srcom::Api::Games.find_by(abbreviation: "sm64") # => Array(Game)
 
 # or
 
-game = Srcom::Api::Games.find_by_id("sm64") #=> Game
+game = Srcom::Api::Games.find_by_id("sm64") # => Game
 
 # or
 
-game = Srcom::Api::Games.find_by_id("o1y9wo6q") #=> Game
+game = Srcom::Api::Games.find_by_id("o1y9wo6q") # => Game
 ```
 
 ### IDs and Abbreviations
@@ -51,22 +51,43 @@ Try to avoid actually making use of this though, as the redirect will count towa
 
 ### Pagination
 
-A lot of the resources available through the API are [paginated](https://github.com/speedruncomorg/api/blob/master/version1/pagination.md) with a maximum amount of 200 elements per page (except bulk game requests, which are capped at 1000 elements per page). For all of those endpoints srcr gives you full control but tries to set sensible defaults.
+A lot of the resources available through the API are [paginated](https://github.com/speedruncomorg/api/blob/master/version1/pagination.md) with a maximum amount of 200 elements per page (except bulk game requests, which are capped at 1000 elements per page). To minimize network usage all of these resources use a custom [`PageIterator`](https://srcr.shardlab.dev/master/Srcom/Api/PageIterator.html) which will only request the pages that you actually need. See its documentation for details on how to use it.
+For all paginated endpoints srcr gives you full control over the page size but tries to set sensible defaults.
 Let's try to do look for newly submitted runs as an example:
 
 ```crystal
 require "srcr"
 
-# This gets the 20 most recently submitted runs
-runs = Srcom::Api::Runs.find_by(status: "new", order_by: "verify-date", sort_direction: "desc") #=> Array(Run)
+# This gets the 250 most recently submitted runs
 
-# If we want to get all currently unverified runs we have to tell the method to do so
-runs = Srcom::Api::Runs.find_by(status: "new", all_pages: true, max_results_per_page: 200) #=> Array(Run)
+# First, get an iterator
+runs = Srcom::Api::Runs.find_by(status: "new", order_by: "verify-date", sort_direction: "desc") # => PageIterator(Run)
+
+# Now, get the first 250 runs from that iterator
+runs = runs.first(250).to_a # => Array(Run)
+
+
+
+# If we want to get all currently unverified runs simply call `.to_a` immediately
+
+# First, get an iterator again
+runs = Srcom::Api::Runs.find_by(status: "new", page_size: 200) # => PageIterator(Run)
+# Now simply call `to_a`
+runs = runs.to_a # => Array(Run)
 ```
 
-Do note that trying to get a lot of very large objects at once (namely `Run`s and especially `Game`s) can lead to the request timing out or speedrun.com throwing a 503 error. Usually `Run`s work out, but even if it goes at the expense of having to do more request try setting lower values for `max_results_per_page`.
+For another example, let's try to find the internal ID speedrun.com assigns to the PC platform:
+
+```crystal
+# Since we know for a fact speedrun.com has a platform named PC, we can use `.not_nil!`
+pc_id = Srcom::Api::Platforms.get().find { |platform| platform.name == "PC" }.not_nil!.id
+```
+
+Since the `PageIterator` only requests pages when elements from them are actually asked for, it only keeps requesting pages here until the platform "PC" has been found, not all of them.
+
+Do note that trying to get a lot of very large objects at once (namely `Run`s and especially `Game`s) can lead to the request timing out or speedrun.com throwing a 503 error. Usually `Run`s work out, but even if it goes at the expense of having to do more request try setting lower values for `page_size`.
 Whenever you make a paginated request expect it to take a very long time, especially if that request wasn't made recently and speedrun.com doesn't have it cached. For reference, trying to get all unverified runs might very well take several minutes.
-If a paginated request does crash for some reason, the wrapper will abort and return all the data it has gotten so far.
+If a paginated request does crash for some reason, the `PageIterator` will simply use the data it has. It also sets an internal flag so you know that something during the request went wrong. For more details see [the `PageIterator`'s documentation](https://srcr.shardlab.dev/master/Srcom/Api/PageIterator.html).
 
 ### Resources that aren't embedded
 

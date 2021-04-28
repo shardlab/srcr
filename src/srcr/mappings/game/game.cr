@@ -52,8 +52,8 @@ struct Srcom::Game
   #
   # Defaults to getting all of them since there shouldn't be an absurd amount of `Run´s in
   # a single `Game`.
-  def runs(all_pages : Bool = true, max_results_per_page : Int32 = 200) : Array(Run)
-    Srcom::Api::Runs.find_by(game: @id, all_pages: all_pages, max_results_per_page: max_results_per_page)
+  def runs(page_size : Int32 = 200) : Srcom::Api::PageIterator(Run)
+    Srcom::Api::Runs.find_by(game: @id, page_size: page_size)
   end
 
   # Gets every `Leaderboard` with the *top* N runs for this `Game`, skipping over empty
@@ -71,9 +71,8 @@ struct Srcom::Game
               scope : String = "all",
               miscellaneous : Bool = true,
               skip_empty : Bool = false,
-              all_pages : Bool = true,
-              max_results_per_page : Int32 = 200) : Array(Leaderboard)
-    Srcom::Api::Games.get_records(@id, top, scope, miscellaneous, skip_empty, all_pages, max_results_per_page)
+              page_size : Int32 = 200) : Srcom::Api::PageIterator(Leaderboard)
+    Srcom::Api::Games.get_records(@id, top, scope, miscellaneous, skip_empty, page_size)
   end
 
   # Gets all the `Series` this `Game` belongs to, if it belongs to any.
@@ -101,8 +100,8 @@ struct Srcom::Game
   end
 
   # Returns all `Game`s derived from this `Game`.
-  def derived_games(all_pages : Bool = true, max_results_per_page : Int32 = 200) : Array(Game)
-    return Srcom::Api::Games.get_derived_games(@id, all_pages: all_pages, max_results_per_page: max_results_per_page)
+  def derived_games(page_size : Int32 = 200) : Srcom::Api::PageIterator(Game)
+    return Srcom::Api::Games.get_derived_games(@id, page_size: page_size)
   end
 
   # Returns the `Leaderboard` for the `Category` that is first shown when this `Game` is visited

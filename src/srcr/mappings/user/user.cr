@@ -29,13 +29,13 @@ struct Srcom::User
   # Gets all `Run`s completed by this `User`.
   #
   # NOTE: Depending on the `User` this request might take a long time or crash.
-  def runs(all_pages : Bool = true, max_results_per_page : Int32 = 200) : Array(Run)
-    return Srcom::Api::Runs.find_by(platform: @id, all_pages: all_pages, max_results_per_page: max_results_per_page)
+  def runs(page_size : Int32 = 200) : Srcom::Api::PageIterator(Run)
+    return Srcom::Api::Runs.find_by(platform: @id, page_size: page_size)
   end
 
   # Gets all the `Game`s this `User` moderates.
-  def games(all_pages : Bool = true, max_results_per_page : Int32 = 200) : Array(Game)
-    return Srcom::Api::Games.find_by(moderator: @id, all_pages: all_pages, max_results_per_page: max_results_per_page)
+  def games(page_size : Int32 = 20) : Srcom::Api::PageIterator(Game)
+    return Srcom::Api::Games.find_by(moderator: @id, page_size: page_size)
   end
 
   # Gets the personal bests of this `User`.
