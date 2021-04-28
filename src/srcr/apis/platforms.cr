@@ -6,10 +6,7 @@ class Srcom::Api::Platforms
   # Possible values for *order_by*: "released" or "name", with the default being "name".
   #
   # Possible values for *sort_direction*: "desc" or "asc", with "asc" being the default.
-  def self.get(order_by : String? = nil,
-               sort_direction : String? = nil,
-               all_pages : Bool = true,
-               max_results_per_page : Int32 = 200) : Array(Platform)
+  def self.get(order_by : String? = nil, sort_direction : String? = nil, page_size : Int32 = 200) : PageIterator(Platform)
     options = Hash(String, String).new
     case order_by
     when Nil
@@ -22,14 +19,14 @@ class Srcom::Api::Platforms
     end
     options["direction"] = sort_direction == "desc" ? "desc" : "asc"
 
-    if max_results_per_page > 200
-      max_results_per_page = 200
+    if page_size > 200
+      page_size = 200
       Log.warn { "[/platforms] Only up to 200 results per page are supported. Request adjusted." }
     end
 
-    options["max"] = max_results_per_page.to_s
+    options["max"] = page_size.to_s
 
-    return request_platforms(options, all_pages).map { |raw| Platform.from_json(raw.to_json) }
+    return request_platforms(options)
   end
 
   # Gets a `Platform` by its *id*.
@@ -39,11 +36,19 @@ class Srcom::Api::Platforms
     return Platform.from_json(request_single_platform(id).to_json)
   end
 
-  protected def self.request_platforms(options : Hash(String, String), all_pages : Bool)
+  protected def self.request_platforms(options : Hash(String, String))
     params = URI::Params.encode(options)
     url = "#{BASE_URL}platforms?#{params}"
 
-    return Api.request("/platforms", url, "GET", all_pages: all_pages)
+    data, next_page_uri = Api.request("/platforms", url, "GET")
+    elements = data.map { |raw| Platform.from_json(raw.to_json) }
+    return PageIterator(Platform).new(
+      endpoint: "/platforms",
+      method: "GET",
+      headers: nil,
+      body: nil,
+      next_page_uri: next_page_uri,
+      elements: elements)
   end
 
   protected def self.request_single_platform(id : String)

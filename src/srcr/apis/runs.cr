@@ -19,8 +19,9 @@ class Srcom::Api::Runs
   #
   # NOTE: Not specifying any filter probably leads to the request eventually crashing, leading to incomplete data.
   #
-  # NOTE: Since `Run`s are very large objects this method defaults to very low results per page
-  # to give the request a reasonable speed and the best odds at the request suceeding.
+  # NOTE: While `Run`s are very large objects, using the maximum page size does usually work, and
+  # so that is what is defaulted to. If your requests are timing out or taking too long, try setting
+  # a smaller page size.
   def self.find_by(user : String? = nil,
                    guest : String? = nil,
                    examiner : String? = nil,
@@ -33,8 +34,7 @@ class Srcom::Api::Runs
                    status : String? = nil,
                    order_by : String? = nil,
                    sort_direction : String? = nil,
-                   all_pages : Bool = false,
-                   max_results_per_page : Int32 = 20) : Array(Run)
+                   page_size : Int32 = 200) : PageIterator(Run)
     options = Hash(String, String).new
     options["user"] = user if user
     options["guest"] = guest if guest
@@ -77,14 +77,14 @@ class Srcom::Api::Runs
       end
     end
 
-    if max_results_per_page > 200
-      max_results_per_page = 200
+    if page_size > 200
+      page_size = 200
       Log.warn { "[/runs] Only up to 200 results per page are supported. Request adjusted." }
     end
 
-    options["max"] = max_results_per_page.to_s
+    options["max"] = page_size.to_s
 
-    return request_runs(options, all_pages).map { |raw| Run.from_json(raw.to_json) }
+    return request_runs(options)
   end
 
   # Gets a `Run` given its *id*.
@@ -189,11 +189,19 @@ class Srcom::Api::Runs
     return SimpleRun.from_json(delete_run(id, headers).to_json)
   end
 
-  protected def self.request_runs(options : Hash(String, String), all_pages : Bool)
+  protected def self.request_runs(options : Hash(String, String))
     params = URI::Params.encode(options)
     url = "#{BASE_URL}runs?embed=game,category.variables,category.game,level.categories.variables,level.variables,level.categories.game,players,region,platform&#{params}"
 
-    return Api.request("/runs", url, "GET", all_pages: all_pages)
+    data, next_page_uri = Api.request("/runs", url, "GET")
+    elements = data.map { |raw| Run.from_json(raw.to_json) }
+    return PageIterator(Run).new(
+      endpoint: "/runs",
+      method: "GET",
+      headers: nil,
+      body: nil,
+      next_page_uri: next_page_uri,
+      elements: elements)
   end
 
   protected def self.request_single_run(id : String)

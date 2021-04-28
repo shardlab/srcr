@@ -47,24 +47,23 @@ class Srcom::Api::Categories
   # skipping over empty `Leaderboard`s if *skip_empty* is `true`.
   #
   # NOTE: This can result in more than N runs per `Leaderboard`, as ties can occur.
-  # NOTE: For full game categories, this returns an Array with only one element. For individual level
+  # NOTE: For full game categories, this will only contain one element. For individual level
   # categories a `Leaderboard` is returned for each level for which this category is applicable.
   def self.get_records(id : String,
                        top : Int32 = 3,
                        skip_empty : Bool = false,
-                       all_pages : Bool = true,
-                       max_results_per_page : Int32 = 200) : Array(Leaderboard)
-    if max_results_per_page > 200
-      max_results_per_page = 200
+                       page_size : Int32 = 200) : PageIterator(Leaderboard)
+    if page_size > 200
+      page_size = 200
       Log.warn { "[/categories/#{id}/records] Only up to 200 results per page are supported. Request adjusted." }
     end
 
     options = Hash(String, String).new
     options["top"] = top.to_s
     options["skip-empty"] = skip_empty.to_s
-    options["max"] = max_results_per_page
+    options["max"] = page_size.to_s
 
-    return request_category_records(id, options, all_pages).map { |raw| Leaderboard.from_json(raw.to_json) }
+    return request_category_records(id, options)
   end
 
   protected def self.request_single_category(id : String)
@@ -77,12 +76,22 @@ class Srcom::Api::Categories
     params = URI::Params.encode(options)
 
     url = "#{BASE_URL}categories/#{id}/variables?#{params}"
-    return Api.request("/categories/#{id}/variables", url, "GET", all_pages: false)
+    elements, _next = Api.request("/categories/#{id}/variables", url, "GET")
+    return elements
   end
 
-  protected def self.request_category_records(id : String, options : Hash(String, String), all_pages : Bool)
+  protected def self.request_category_records(id : String, options : Hash(String, String))
     params = URI::Params.encode(options)
     url = "#{BASE_URL}categories/#{id}/records?embed=game,category.variables,category.game,level.categories.variables,level.categories.game,level.variables,players,regions,platforms,variables&#{params}"
-    return Api.request("/categories/#{id}/records", url, "GET", all_pages: all_pages)
+
+    data, next_page_uri = Api.request("/categories/#{id}/records", url, "GET")
+    elements = data.map { |raw| Leaderboard.from_json(raw.to_json) }
+    return PageIterator(Leaderboard).new(
+      endpoint: "/categories/#{id}/records",
+      method: "GET",
+      headers: nil,
+      body: nil,
+      next_page_uri: next_page_uri,
+      elements: elements)
   end
 end

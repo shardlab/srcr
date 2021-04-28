@@ -3,9 +3,9 @@ class Srcom::Api::Users
 
   # Searches through all `User`s using the given query parameters.
   #
-  # Using *lookups* performs an exact-match search across all user names, URLs and social profiles.
+  # Using *lookups* performs an exact-match search across all usernames, URLs and social profiles.
   #
-  # Searching by *name* searches for the substring across user names and URLs.
+  # Searching by *name* searches for the substring across usernames and URLs.
   #
   # All other parameters search across users' names on the respective platform.
   #
@@ -27,8 +27,7 @@ class Srcom::Api::Users
                    speedrunslive : String? = nil,
                    order_by : String? = nil,
                    sort_direction : String? = nil,
-                   all_pages : Bool = false,
-                   max_results_per_page : Int32 = 20) : Array(User)
+                   page_size : Int32 = 200) : PageIterator(User)
     options = Hash(String, String).new
     if lookup && (name || twitch || hitbox || twitter || speedrunslive)
       Log.warn { "[/users] When `lookup` is used all other search parameters are disabled." }
@@ -65,14 +64,14 @@ class Srcom::Api::Users
       end
     end
 
-    if max_results_per_page > 200
-      max_results_per_page = 200
+    if page_size > 200
+      page_size = 200
       Log.warn { "[/users] Only up to 200 results per page are supported. Request adjusted." }
     end
 
-    options["max"] = max_results_per_page.to_s
+    options["max"] = page_size.to_s
 
-    return request_users(options, all_pages).map { |raw| User.from_json(raw.to_json) }
+    return request_users(options)
   end
 
   # Finds a `User` by the given *id* or user name.
@@ -83,7 +82,7 @@ class Srcom::Api::Users
   end
 
   # Gets the personal bests of the `User` with the given *id*, where *id* can be either a real ID
-  # or a user name.
+  # or a username.
   #
   # Providing *top* will only return runs of rank *top* or better.
   #
@@ -98,11 +97,19 @@ class Srcom::Api::Users
     return request_pbs(id, options).map { |raw| PBRun.from_json(raw.to_json) }
   end
 
-  protected def self.request_users(options : Hash(String, String), all_pages : Bool)
+  protected def self.request_users(options : Hash(String, String))
     params = URI::Params.encode(options)
     url = "#{BASE_URL}users?#{params}"
 
-    return Api.request("/users", url, "GET", all_pages: all_pages)
+    data, next_page_uri = Api.request("/users", url, "GET")
+    elements = data.map { |raw| User.from_json(raw.to_json) }
+    return PageIterator(User).new(
+      endpoint: "/users",
+      method: "GET",
+      headers: nil,
+      body: nil,
+      next_page_uri: next_page_uri,
+      elements: elements)
   end
 
   protected def self.request_single_user(id : String)
@@ -115,6 +122,7 @@ class Srcom::Api::Users
     params = URI::Params.encode(options)
     url = "#{BASE_URL}users/#{id}/personal-bests?embed=game,category.variables,category.game,level.categories.variables,level.variables,level.categories.game,players,region,platform&#{params}"
 
-    return Api.request("/users/#{id}/personal-bests", url, "GET", all_pages: false)
+    elements, _next = Api.request("/users/#{id}/personal-bests", url, "GET")
+    return elements
   end
 end

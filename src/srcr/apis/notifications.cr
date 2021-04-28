@@ -4,20 +4,25 @@ class Srcom::Api::Notifications
   # Possible values for *sort_direction*: "desc" or "asc", with "desc" being the default.
   def self.get(api_key : String,
                sort_direction : String? = nil,
-               all_pages : Bool = false,
-               max_results_per_page : Int32 = 20) : Array(Notification)
+               page_size : Int32 = 200) : PageIterator(Notification)
     headers = HTTP::Headers.new
     headers["X-API-Key"] = api_key
 
     direction = sort_direction == "asc" ? "asc" : "desc"
-    return request_notifications(direction, headers, all_pages, max_results_per_page).map { |raw| Notification.from_json(raw.to_json) }
+    return request_notifications(direction, headers, page_size)
   end
 
-  protected def self.request_notifications(direction : String,
-                                           headers : HTTP::Headers,
-                                           all_pages : Bool,
-                                           max_results_per_page : Int32)
-    url = "#{BASE_URL}notifications?direction=#{direction}&max=#{max_results_per_page}"
-    Api.request("/notifications", url, "GET", headers, all_pages: false)
+  protected def self.request_notifications(direction : String, headers : HTTP::Headers, page_size : Int32)
+    url = "#{BASE_URL}notifications?direction=#{direction}&max=#{page_size}"
+
+    data, next_page_uri = Api.request("/notifications", url, "GET", headers)
+    elements = data.map { |raw| Notification.from_json(raw.to_json) }
+    return PageIterator(Notification).new(
+      endpoint: "/notifications",
+      method: "GET",
+      headers: headers,
+      body: nil,
+      next_page_uri: next_page_uri,
+      elements: elements)
   end
 end

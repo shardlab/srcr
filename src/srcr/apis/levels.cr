@@ -95,20 +95,19 @@ class Srcom::Api::Levels
   def self.get_records(id : String,
                        top : Int32 = 3,
                        skip_empty : Bool = false,
-                       all_pages : Bool = true,
-                       max_results_per_page : Int32 = 200) : Array(Leaderboard)
+                       page_size : Int32 = 200) : PageIterator(Leaderboard)
     options = Hash(String, String).new
     options["top"] = top.to_s
     options["skip-empty"] = skip_empty.to_s
 
-    if max_results_per_page > 200
-      max_results_per_page = 200
+    if page_size > 200
+      page_size = 200
       Log.warn { "[/levels/#{id}/records] Only up to 200 results per page are supported. Request adjusted." }
     end
 
-    options["max"] = max_results_per_page.to_s
+    options["max"] = page_size.to_s
 
-    return request_level_records(id, options, all_pages).map { |raw| Leaderboard.from_json(raw.to_json) }
+    return request_level_records(id, options)
   end
 
   protected def self.request_single_level(id : String)
@@ -121,20 +120,30 @@ class Srcom::Api::Levels
     params = URI::Params.encode(options)
     url = "#{BASE_URL}levels/#{id}/categories?embed=variables,game&#{params}"
 
-    return Api.request("/levels/#{id}/categories", url, "GET", all_pages: false)
+    elements, _next = Api.request("/levels/#{id}/categories", url, "GET")
+    return elements
   end
 
   protected def self.request_level_variables(id : String, options : Hash(String, String))
     params = URI::Params.encode(options)
     url = "#{BASE_URL}levels/#{id}/variables?&#{params}"
 
-    return Api.request("/levels/#{id}/variables", url, "GET", all_pages: false)
+    elements, _next = Api.request("/levels/#{id}/variables", url, "GET")
+    return elements
   end
 
-  protected def self.request_level_records(id : String, options : Hash(String, String), all_pages : Bool)
+  protected def self.request_level_records(id : String, options : Hash(String, String))
     params = URI::Params.encode(options)
     url = "#{BASE_URL}levels/#{id}/records?embed=game,category.variables,category.game,level.categories.variables,level.categories.game,level.variables,players,regions,platforms,variables&#{params}"
 
-    return Api.request("/levels/#{id}/records", url, "GET", all_pages: all_pages)
+    data, next_page_uri = Api.request("/levels/#{id}/records", url, "GET")
+    elements = data.map { |raw| Leaderboard.from_json(raw.to_json) }
+    return PageIterator(Leaderboard).new(
+      endpoint: "/levels/#{id}/records",
+      method: "GET",
+      headers: nil,
+      body: nil,
+      next_page_uri: next_page_uri,
+      elements: elements)
   end
 end
