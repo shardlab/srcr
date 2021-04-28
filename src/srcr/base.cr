@@ -63,91 +63,12 @@ module Srcom
     delegate :backoff_time, to: @@rate_limiter
 
     # Makes a request to the given *url* using the given *method* with the given *headers* and *body*,
-    # getting all pages of a paginated resource if *all_pages* is set to true.
+    # returning both the relevant data if the request is successful and the link to the next page
+    # if the resource requested is paginated and has a next page.
     #
-    # NOTE: *endpoint* is just used for logging purposes.
+    # NOTE: *endpoint* and *page* are only used for logging purposes.
     #
     # NOTE: It is not recommended to use this method directly.
-    # def request(endpoint : String, url : String, method : String, headers : HTTP::Headers = HTTP::Headers.new, body : String? = nil, all_pages : Bool = true)
-    #   headers["User-Agent"] = USER_AGENT
-
-    #   @@rate_limiter.check_rate_limit(endpoint)
-
-    #   Log.info { "[HTTP OUT] #{method} #{endpoint} (#{body.try &.size || 0} bytes)" }
-    #   Log.debug { "[HTTP OUT] BODY: #{body}" }
-
-    #   response = HTTP::Client.exec(method: method, url: url, headers: headers, body: body)
-
-    #   Log.info { "[HTTP IN] #{response.status_code} #{response.status_message} (#{response.body.size} bytes)" }
-    #   Log.debug { "[HTTP IN] BODY: #{response.body}" }
-
-    #   if response.success?
-    #     json = JSON.parse(response.body)
-    #     data = json["data"].as_a
-
-    #     if all_pages
-    #       page = 2
-    #       begin
-    #         while json["pagination"]? && !json["pagination"]["links"].as_a.empty? && json["pagination"]["links"].as_a[-1]["rel"].as_s == "next"
-    #           @@rate_limiter.check_rate_limit(endpoint)
-
-    #           Log.info { "[HTTP OUT] #{method} #{endpoint} (#{body.try &.size || 0} bytes) (page #{page})" }
-    #           Log.debug { "[HTTP OUT] BODY: #{body}" }
-
-    #           url = json["pagination"]["links"].as_a[-1]["uri"].as_s
-    #           response = HTTP::Client.exec(method: method, url: url, headers: headers, body: body)
-
-    #           Log.info { "[HTTP IN] #{response.status_code} #{response.status_message} (#{response.body.size} bytes)" }
-    #           Log.debug { "[HTTP IN] BODY: #{response.body}" }
-
-    #           if response.success?
-    #             json = JSON.parse(response.body)
-    #             data += json["data"].as_a
-    #             page += 1
-    #           elsif response.status_code == 420
-    #             @@rate_limiter.global_rate_limit_exceeded
-    #           else
-    #             raise StatusException.new(response) unless response.content_type == "application/json"
-
-    #             begin
-    #               error = APIError.from_json(response.body)
-    #             rescue
-    #               raise StatusException.new(response)
-    #             end
-    #             raise CodeException.new(response, error)
-    #           end
-    #         end
-    #       rescue e : StatusException
-    #         Log.error { e.message }
-    #         Log.error { "Paginated request to #{endpoint} returned with #{e.status_code}. Returning incomplete data." }
-    #         return data
-    #       rescue e : Socket::ConnectError
-    #         Log.error { "Paginated request to #{endpoint} timed out. Returning incomplete data." }
-    #         return data
-    #       end
-
-    #       return data
-    #     else
-    #       return data
-    #     end
-    #   elsif response.status_code == 302
-    #     request(endpoint, "https://www.speedrun.com#{response.headers["Location"]}", method, headers, body, all_pages)
-    #   elsif response.status_code == 420
-    #     @@rate_limiter.global_rate_limit_exceeded
-    #     request(endpoint, url, method, headers, body, all_pages)
-    #   else
-    #     raise StatusException.new(response) unless response.content_type == "application/json"
-
-    #     begin
-    #       error = APIError.from_json(response.body)
-    #     rescue
-    #       raise StatusException.new(response)
-    #     end
-    #     raise CodeException.new(response, error)
-    #   end
-    # end
-
-    # page logging only
     def request(endpoint : String, url : String, method : String, headers : HTTP::Headers? = nil, body : String? = nil, page : Int32 = 1)
       headers ||= HTTP::Headers.new
       headers["User-Agent"] = USER_AGENT
