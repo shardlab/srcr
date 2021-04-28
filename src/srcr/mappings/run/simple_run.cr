@@ -36,7 +36,9 @@ struct Srcom::SimpleRun
         players << Srcom::Api::Users.find_by_id(player.id.not_nil!)
       else
         # Guests without a name is one of the weird things that can happen, unfortunately.
-        players << Srcom::Api::Guests.find_by_name(player.name) if player.name
+        if (name = player.name)
+          players << Srcom::Api::Guests.find_by_name(name)
+        end
       end
     end
 
@@ -52,12 +54,12 @@ struct Srcom::SimpleRun
   # Gets the full `Region` this run was played in, if provided.
   def region : Region?
     id = @system.region
-    return Srcom::Api::Region.find_by_id(id) if id
+    return Srcom::Api::Regions.find_by_id(id) if id
   end
 
   # Gets the full `Game` this `Run` was played in.
   def full_game : Game
-    return Srcom::Api::Games.find_by_id(@game.id)
+    return Srcom::Api::Games.find_by_id(@game)
   end
 
   # Gets the full `Level` this `Run` was played in.

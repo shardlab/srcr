@@ -23,7 +23,7 @@ struct Srcom::Series
   #
   # NOTE: Depending on the series this request might take quite a while. It also defaults to only 20
   # results per page as otherwise it might very well 503.
-  def games(all_pages : Bool = true, max_results_per_page : Int32 = 20) : Array(Game)
-    return Srcom::Api::Series.get_games(@id, all_pages: all_pages, max_results_per_page: max_results_per_page)
+  def games(page_size : Int32 = 20) : Srcom::Api::PageIterator(Game)
+    return Srcom::Api::Series.get_games(@id, page_size: page_size)
   end
 end

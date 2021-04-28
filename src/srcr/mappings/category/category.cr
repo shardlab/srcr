@@ -22,10 +22,7 @@ struct Srcom::Category
   end
 
   # Gets all `Run`s completed in this `Category`.
-  #
-  # Defaults to getting all of them since there shouldn't be an absurd amount of `Run´s in
-  # a single `Category`.
-  def runs(all_pages : Bool = true, max_results_per_page : Int32 = 200) : Array(Run)
-    return Srcom::Api::Runs.find_by(category: @id, all_pages: all_pages, max_results_per_page: max_results_per_page)
+  def runs(page_size : Int32 = 200) : Srcom::Api::PageIterator(Run)
+    return Srcom::Api::Runs.find_by(category: @id, page_size: page_size)
   end
 end

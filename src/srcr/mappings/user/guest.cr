@@ -19,8 +19,8 @@ struct Srcom::Guest
   # Gets all `Run`s completed by this `Guest`.
   #
   # NOTE: As `Guest`s likely don't play too many runs before signing up, this request shouldn't crash.
-  def runs(all_pages : Bool = true, max_results_per_page : Int32 = 200) : Array(Run)
+  def runs(page_size : Int32 = 200) : Srcom::Api::PageIterator(Run)
     name = @name || ""
-    return Srcom::Api::Runs.find_by(guest: name, all_pages: all_pages, max_results_per_page: max_results_per_page)
+    return Srcom::Api::Runs.find_by(guest: name, page_size: page_size)
   end
 end

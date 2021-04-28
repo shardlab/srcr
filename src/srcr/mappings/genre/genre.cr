@@ -9,7 +9,7 @@ struct Srcom::Genre
   # Gets all the `Game`s belonging to this `Genre`.
   #
   # NOTE: Defaults to 20 results per page as otherwise the request might very well 503.
-  def games(all_pages : Bool = true, max_results_per_page : Int32 = 20) : Array(Game)
-    return Srcom::Api::Games.find_by(genre: @id, all_pages: all_pages, max_results_per_page: max_results_per_page)
+  def games(page_size : Int32 = 20) : Srcom::Api::PageIterator(Game)
+    return Srcom::Api::Games.find_by(genre: @id, page_size: page_size)
   end
 end
