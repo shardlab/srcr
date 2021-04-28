@@ -1,8 +1,10 @@
-[![docs](https://img.shields.io/badge/docs-master-red.svg?style=flat-square)](https://shardlab.github.io/srcr/master/)
+[![docs](https://img.shields.io/badge/docs-master-red.svg?style=flat-square)](https://srcr.shardlab.dev/master/)
 
 # srcr
 
 `srcr` is a full-scale API wrapper for the [speedrun.com](https://www.speedrun.com) [API](https://github.com/speedruncomorg/api) written in [Crystal](https://crystal-lang.org/). The goal of this implementation is to provide as much data as possible / reasonable. As such, this library makes use of [embedding](https://github.com/speedruncomorg/api/blob/master/version1/embedding.md) wherever possible. Where something cannot be embedded for some reason, the library provides shorthand methods to request the data.
+
+If you need any help with this library, feel free to reach out on the [Shard Lab Discord server](https://discord.gg/uQUrUndK6u).
 
 ## Installation
 
@@ -115,7 +117,7 @@ The speedrun.com API has many things that are implemented in a weird, inconsiste
 
 ### Full Documentation
 
-The complete documentation for srcr is available here: https://shardlab.github.io/srcr/master/
+The complete documentation for srcr is available here: https://srcr.shardlab.dev/master/
 
 ## Contributing
 
