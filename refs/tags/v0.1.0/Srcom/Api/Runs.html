@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_name" content="srcr">
+
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+  <meta name="repository-name" content="srcr">
+  <title>Srcom::Api::Runs - srcr 0.1.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          srcr
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="srcr/Srcom" data-name="srcom">
+      <a href="../../Srcom.html">Srcom</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="srcr/Srcom/Api" data-name="srcom::api">
+      <a href="../../Srcom/Api.html">Api</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Categories" data-name="srcom::api::categories">
+      <a href="../../Srcom/Api/Categories.html">Categories</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Developers" data-name="srcom::api::developers">
+      <a href="../../Srcom/Api/Developers.html">Developers</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Engines" data-name="srcom::api::engines">
+      <a href="../../Srcom/Api/Engines.html">Engines</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Games" data-name="srcom::api::games">
+      <a href="../../Srcom/Api/Games.html">Games</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Gametypes" data-name="srcom::api::gametypes">
+      <a href="../../Srcom/Api/Gametypes.html">Gametypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Genres" data-name="srcom::api::genres">
+      <a href="../../Srcom/Api/Genres.html">Genres</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Guests" data-name="srcom::api::guests">
+      <a href="../../Srcom/Api/Guests.html">Guests</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Leaderboards" data-name="srcom::api::leaderboards">
+      <a href="../../Srcom/Api/Leaderboards.html">Leaderboards</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Levels" data-name="srcom::api::levels">
+      <a href="../../Srcom/Api/Levels.html">Levels</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Notifications" data-name="srcom::api::notifications">
+      <a href="../../Srcom/Api/Notifications.html">Notifications</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/PageIterator" data-name="srcom::api::pageiterator(t)">
+      <a href="../../Srcom/Api/PageIterator.html">PageIterator</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Platforms" data-name="srcom::api::platforms">
+      <a href="../../Srcom/Api/Platforms.html">Platforms</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Profile" data-name="srcom::api::profile">
+      <a href="../../Srcom/Api/Profile.html">Profile</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Publishers" data-name="srcom::api::publishers">
+      <a href="../../Srcom/Api/Publishers.html">Publishers</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Regions" data-name="srcom::api::regions">
+      <a href="../../Srcom/Api/Regions.html">Regions</a>
+      
+    </li>
+  
+  <li class=" current" data-id="srcr/Srcom/Api/Runs" data-name="srcom::api::runs">
+      <a href="../../Srcom/Api/Runs.html">Runs</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Series" data-name="srcom::api::series">
+      <a href="../../Srcom/Api/Series.html">Series</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Users" data-name="srcom::api::users">
+      <a href="../../Srcom/Api/Users.html">Users</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Api/Variables" data-name="srcom::api::variables">
+      <a href="../../Srcom/Api/Variables.html">Variables</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/APIError" data-name="srcom::apierror">
+      <a href="../../Srcom/APIError.html">APIError</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/BulkGame" data-name="srcom::bulkgame">
+      <a href="../../Srcom/BulkGame.html">BulkGame</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/BulkGame/Name" data-name="srcom::bulkgame::name">
+      <a href="../../Srcom/BulkGame/Name.html">Name</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Categories" data-name="srcom::categories">
+      <a href="../../Srcom/Categories.html">Categories</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Categories/Players" data-name="srcom::categories::players">
+      <a href="../../Srcom/Categories/Players.html">Players</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Category" data-name="srcom::category">
+      <a href="../../Srcom/Category.html">Category</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/CodeException" data-name="srcom::codeexception">
+      <a href="../../Srcom/CodeException.html">CodeException</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Developer" data-name="srcom::developer">
+      <a href="../../Srcom/Developer.html">Developer</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/EmbeddedCategoryConverter" data-name="srcom::embeddedcategoryconverter">
+      <a href="../../Srcom/EmbeddedCategoryConverter.html">EmbeddedCategoryConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/EmbeddedLevelConverter" data-name="srcom::embeddedlevelconverter">
+      <a href="../../Srcom/EmbeddedLevelConverter.html">EmbeddedLevelConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/EmbeddedPlatformConverter" data-name="srcom::embeddedplatformconverter">
+      <a href="../../Srcom/EmbeddedPlatformConverter.html">EmbeddedPlatformConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/EmbeddedRegionConverter" data-name="srcom::embeddedregionconverter">
+      <a href="../../Srcom/EmbeddedRegionConverter.html">EmbeddedRegionConverter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Engine" data-name="srcom::engine">
+      <a href="../../Srcom/Engine.html">Engine</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Game" data-name="srcom::game">
+      <a href="../../Srcom/Game.html">Game</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Game/Asset" data-name="srcom::game::asset">
+      <a href="../../Srcom/Game/Asset.html">Asset</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Game/Assets" data-name="srcom::game::assets">
+      <a href="../../Srcom/Game/Assets.html">Assets</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Game/Gametype" data-name="srcom::game::gametype">
+      <a href="../../Srcom/Game/Gametype.html">Gametype</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Game/Name" data-name="srcom::game::name">
+      <a href="../../Srcom/Game/Name.html">Name</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Game/Ruleset" data-name="srcom::game::ruleset">
+      <a href="../../Srcom/Game/Ruleset.html">Ruleset</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Genre" data-name="srcom::genre">
+      <a href="../../Srcom/Genre.html">Genre</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Guest" data-name="srcom::guest">
+      <a href="../../Srcom/Guest.html">Guest</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/ISO8601Converter" data-name="srcom::iso8601converter">
+      <a href="../../Srcom/ISO8601Converter.html">ISO8601Converter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Leaderboard" data-name="srcom::leaderboard">
+      <a href="../../Srcom/Leaderboard.html">Leaderboard</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/LeaderboardRun" data-name="srcom::leaderboardrun">
+      <a href="../../Srcom/LeaderboardRun.html">LeaderboardRun</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Level" data-name="srcom::level">
+      <a href="../../Srcom/Level.html">Level</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Link" data-name="srcom::link">
+      <a href="../../Srcom/Link.html">Link</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Notification" data-name="srcom::notification">
+      <a href="../../Srcom/Notification.html">Notification</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Notification/Item" data-name="srcom::notification::item">
+      <a href="../../Srcom/Notification/Item.html">Item</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/PBRun" data-name="srcom::pbrun">
+      <a href="../../Srcom/PBRun.html">PBRun</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Platform" data-name="srcom::platform">
+      <a href="../../Srcom/Platform.html">Platform</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Publisher" data-name="srcom::publisher">
+      <a href="../../Srcom/Publisher.html">Publisher</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/RateLimiter" data-name="srcom::ratelimiter">
+      <a href="../../Srcom/RateLimiter.html">RateLimiter</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Region" data-name="srcom::region">
+      <a href="../../Srcom/Region.html">Region</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Run" data-name="srcom::run">
+      <a href="../../Srcom/Run.html">Run</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Run/SimpleSystem" data-name="srcom::run::simplesystem">
+      <a href="../../Srcom/Run/SimpleSystem.html">SimpleSystem</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Splits" data-name="srcom::run::splits">
+      <a href="../../Srcom/Run/Splits.html">Splits</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Status" data-name="srcom::run::status">
+      <a href="../../Srcom/Run/Status.html">Status</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Run/Submission" data-name="srcom::run::submission">
+      <a href="../../Srcom/Run/Submission.html">Submission</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Submission/Player" data-name="srcom::run::submission::player">
+      <a href="../../Srcom/Run/Submission/Player.html">Player</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Submission/Variable" data-name="srcom::run::submission::variable">
+      <a href="../../Srcom/Run/Submission/Variable.html">Variable</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Times" data-name="srcom::run::times">
+      <a href="../../Srcom/Run/Times.html">Times</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Run/Videos" data-name="srcom::run::videos">
+      <a href="../../Srcom/Run/Videos.html">Videos</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Run/Videos/Link" data-name="srcom::run::videos::link">
+      <a href="../../Srcom/Run/Videos/Link.html">Link</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/Series" data-name="srcom::series">
+      <a href="../../Srcom/Series.html">Series</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/SimpleGame" data-name="srcom::simplegame">
+      <a href="../../Srcom/SimpleGame.html">SimpleGame</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/SimplePlayer" data-name="srcom::simpleplayer">
+      <a href="../../Srcom/SimplePlayer.html">SimplePlayer</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/SimpleRun" data-name="srcom::simplerun">
+      <a href="../../Srcom/SimpleRun.html">SimpleRun</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/StatusException" data-name="srcom::statusexception">
+      <a href="../../Srcom/StatusException.html">StatusException</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/User" data-name="srcom::user">
+      <a href="../../Srcom/User.html">User</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/User/Country" data-name="srcom::user::country">
+      <a href="../../Srcom/User/Country.html">Country</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/User/Location" data-name="srcom::user::location">
+      <a href="../../Srcom/User/Location.html">Location</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/User/Name" data-name="srcom::user::name">
+      <a href="../../Srcom/User/Name.html">Name</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/User/NameStyle" data-name="srcom::user::namestyle">
+      <a href="../../Srcom/User/NameStyle.html">NameStyle</a>
+      
+    </li>
+  
+  <li class=" " data-id="srcr/Srcom/User/Region" data-name="srcom::user::region">
+      <a href="../../Srcom/User/Region.html">Region</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Variable" data-name="srcom::variable">
+      <a href="../../Srcom/Variable.html">Variable</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Variable/Scope" data-name="srcom::variable::scope">
+      <a href="../../Srcom/Variable/Scope.html">Scope</a>
+      
+    </li>
+  
+  <li class="parent " data-id="srcr/Srcom/Variable/Values" data-name="srcom::variable::values">
+      <a href="../../Srcom/Variable/Values.html">Values</a>
+      
+        <ul>
+  
+  <li class=" " data-id="srcr/Srcom/Variable/Values/Value" data-name="srcom::variable::values::value">
+      <a href="../../Srcom/Variable/Values/Value.html">Value</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Srcom::Api::Runs
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Srcom/Api/Runs.html">Srcom::Api::Runs</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/shardlab/srcr/blob/v0.1.0/src/srcr/apis/runs.cr#L1" target="_blank">
+        srcr/apis/runs.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="Log">
+        <strong>Log</strong> = <code><span class="t">Srcom</span><span class="t">::</span><span class="t">Log</span>.<span class="k">for</span>(<span class="s">&quot;runs&quot;</span>)</code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#change_players(id:String,players:Array(Run::Submission::Player),api_key:String):Srcom::SimpleRun-class-method" class="signature"><strong>.change_players</strong>(id : String, players : Array(Run::Submission::Player), api_key : String) : Srcom::SimpleRun</a>
+        
+          <div class="summary"><p>Changes the players who played the <code><a href="../../Srcom/Run.html">Run</a></code> with the given <em>id</em> to <em>players</em> in the name of the user authenticated with the given <em>api_key</em>, returning the changed run if successful.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#change_status(id:String,status:String,api_key:String,reason:String?=nil):Srcom::SimpleRun-class-method" class="signature"><strong>.change_status</strong>(id : String, status : String, api_key : String, reason : String? = <span class="n">nil</span>) : Srcom::SimpleRun</a>
+        
+          <div class="summary"><p>Changes the status of the <code><a href="../../Srcom/Run.html">Run</a></code> with the given <em>id</em> to the given <em>status</em>, which must either be "verified" or "rejected", with the given <em>reason</em> if the new status should be <em>rejected</em>, in the name of the user authenticated with the given <em>api_key</em>, returning the run if successful.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete(id:String,api_key:String):Srcom::SimpleRun-class-method" class="signature"><strong>.delete</strong>(id : String, api_key : String) : Srcom::SimpleRun</a>
+        
+          <div class="summary"><p>Deletes the <code><a href="../../Srcom/Run.html">Run</a></code> with the given <em>id</em> as the user authenticated using the given <em>api_key</em>, returning the newly verified run if successful.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find_by(user:String?=nil,guest:String?=nil,examiner:String?=nil,game:String?=nil,level:String?=nil,category:String?=nil,platform:String?=nil,region:String?=nil,emulated:Bool=false,status:String?=nil,order_by:String?=nil,sort_direction:String?=nil,page_size:Int32=200):PageIterator(Run)-class-method" class="signature"><strong>.find_by</strong>(user : String? = <span class="n">nil</span>, guest : String? = <span class="n">nil</span>, examiner : String? = <span class="n">nil</span>, game : String? = <span class="n">nil</span>, level : String? = <span class="n">nil</span>, category : String? = <span class="n">nil</span>, platform : String? = <span class="n">nil</span>, region : String? = <span class="n">nil</span>, emulated : Bool = <span class="n">false</span>, status : String? = <span class="n">nil</span>, order_by : String? = <span class="n">nil</span>, sort_direction : String? = <span class="n">nil</span>, page_size : Int32 = <span class="n">200</span>) : PageIterator(Run)</a>
+        
+          <div class="summary"><p>Searches through all <code><a href="../../Srcom/Run.html">Run</a></code>s using the given query parameters.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find_by_id(id:String):Srcom::Run-class-method" class="signature"><strong>.find_by_id</strong>(id : String) : Srcom::Run</a>
+        
+          <div class="summary"><p>Gets a <code><a href="../../Srcom/Run.html">Run</a></code> given its <em>id</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reject(id:String,reason:String,api_key:String):Srcom::SimpleRun-class-method" class="signature"><strong>.reject</strong>(id : String, reason : String, api_key : String) : Srcom::SimpleRun</a>
+        
+          <div class="summary"><p>Rejects the <code><a href="../../Srcom/Run.html">Run</a></code> with the given <em>id</em> for the given <em>reason</em> as the user authenticated using the given <em>api_key</em>, returning the newly verified run if successful.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#submit(run:Srcom::Run::Submission,api_key:String):Srcom::SimpleRun-class-method" class="signature"><strong>.submit</strong>(run : Srcom::Run::Submission, api_key : String) : Srcom::SimpleRun</a>
+        
+          <div class="summary"><p>Submits a <code><a href="../../Srcom/Run/Submission.html">Run::Submission</a></code> to speedrun.com in the name of the user authenticated with the given <em>api_key</em>, returning the newly submitted run as a <code><a href="../../Srcom/SimpleRun.html">SimpleRun</a></code> if the submission was successful.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#verify(id:String,api_key:String):Srcom::SimpleRun-class-method" class="signature"><strong>.verify</strong>(id : String, api_key : String) : Srcom::SimpleRun</a>
+        
+          <div class="summary"><p>Verifies the <code><a href="../../Srcom/Run.html">Run</a></code> with the given <em>id</em> as the user authenticated using the given <em>api_key</em>, returning the newly verified run if successful.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="change_players(id:String,players:Array(Run::Submission::Player),api_key:String):Srcom::SimpleRun-class-method">
+      <div class="signature">
+        
+        def self.<strong>change_players</strong>(id : String, players : Array(<a href="../../Srcom/Run/Submission/Player.html">Run::Submission::Player</a>), api_key : String) : <a href="../../Srcom/SimpleRun.html">Srcom::SimpleRun</a>
+
+        <a class="method-permalink" href="#change_players(id:String,players:Array(Run::Submission::Player),api_key:String):Srcom::SimpleRun-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Changes the players who played the <code><a href="../../Srcom/Run.html">Run</a></code> with the given <em>id</em> to <em>players</em> in the name of the
+user authenticated with the given <em>api_key</em>, returning the changed run if successful.</p>
+
+<p><span class="flag red">BUG</span>  Currently using this method will always return 500 Internal Server Error for an unknown
+reason. Unfortunately, since the fault lies on speedrun.com's side, this can not be fixed.</p>
+
+<p><span class="flag purple">NOTE</span>  Obviously the authenticated user must be a moderator for the game the run was submitted
+to, or a global moderator.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/v0.1.0/src/srcr/apis/runs.cr#L170" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="change_status(id:String,status:String,api_key:String,reason:String?=nil):Srcom::SimpleRun-class-method">
+      <div class="signature">
+        
+        def self.<strong>change_status</strong>(id : String, status : String, api_key : String, reason : String? = <span class="n">nil</span>) : <a href="../../Srcom/SimpleRun.html">Srcom::SimpleRun</a>
+
+        <a class="method-permalink" href="#change_status(id:String,status:String,api_key:String,reason:String?=nil):Srcom::SimpleRun-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Changes the status of the <code><a href="../../Srcom/Run.html">Run</a></code> with the given <em>id</em> to the given <em>status</em>, which must either be
+"verified" or "rejected", with the given <em>reason</em> if the new status should be <em>rejected</em>, in the
+name of the user authenticated with the given <em>api_key</em>, returning the run if successful.</p>
+
+<p><span class="flag purple">NOTE</span>  Obviously the authenticated user must be a moderator for the game the run was submitted
+to, or a global moderator.</p>
+
+<p><span class="flag purple">NOTE</span>  This method exists only to retain an exact mapping to the API's methods. It is highly
+recommended to use the <code><a href="../../Srcom/Api/Runs.html#verify(id:String,api_key:String):Srcom::SimpleRun-class-method">.verify</a></code> and <code><a href="../../Srcom/Api/Runs.html#reject(id:String,reason:String,api_key:String):Srcom::SimpleRun-class-method">.reject</a></code> methods instead of this!</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/v0.1.0/src/srcr/apis/runs.cr#L149" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete(id:String,api_key:String):Srcom::SimpleRun-class-method">
+      <div class="signature">
+        
+        def self.<strong>delete</strong>(id : String, api_key : String) : <a href="../../Srcom/SimpleRun.html">Srcom::SimpleRun</a>
+
+        <a class="method-permalink" href="#delete(id:String,api_key:String):Srcom::SimpleRun-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Deletes the <code><a href="../../Srcom/Run.html">Run</a></code> with the given <em>id</em> as the user authenticated using the given <em>api_key</em>,
+returning the newly verified run if successful.</p>
+
+<p><span class="flag purple">NOTE</span>  Obviously the authenticated user must be a moderator for the game the run was submitted
+to, or a global moderator.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/v0.1.0/src/srcr/apis/runs.cr#L184" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find_by(user:String?=nil,guest:String?=nil,examiner:String?=nil,game:String?=nil,level:String?=nil,category:String?=nil,platform:String?=nil,region:String?=nil,emulated:Bool=false,status:String?=nil,order_by:String?=nil,sort_direction:String?=nil,page_size:Int32=200):PageIterator(Run)-class-method">
+      <div class="signature">
+        
+        def self.<strong>find_by</strong>(user : String? = <span class="n">nil</span>, guest : String? = <span class="n">nil</span>, examiner : String? = <span class="n">nil</span>, game : String? = <span class="n">nil</span>, level : String? = <span class="n">nil</span>, category : String? = <span class="n">nil</span>, platform : String? = <span class="n">nil</span>, region : String? = <span class="n">nil</span>, emulated : Bool = <span class="n">false</span>, status : String? = <span class="n">nil</span>, order_by : String? = <span class="n">nil</span>, sort_direction : String? = <span class="n">nil</span>, page_size : Int32 = <span class="n">200</span>) : <a href="../../Srcom/Api/PageIterator.html">PageIterator</a>(<a href="../../Srcom/Run.html">Run</a>)
+
+        <a class="method-permalink" href="#find_by(user:String?=nil,guest:String?=nil,examiner:String?=nil,game:String?=nil,level:String?=nil,category:String?=nil,platform:String?=nil,region:String?=nil,emulated:Bool=false,status:String?=nil,order_by:String?=nil,sort_direction:String?=nil,page_size:Int32=200):PageIterator(Run)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Searches through all <code><a href="../../Srcom/Run.html">Run</a></code>s using the given query parameters.</p>
+
+<p>Searching by <em>guest</em> requires a <code><a href="../../Srcom/Guest.html">Guest</a></code>'s name.</p>
+
+<p>Setting <em>emulated</em> to <code>true</code> returns only runs done on an emulated system. Setting it to <code>false</code>
+will return both runs that are done on an emulated and runs that done on a real system.</p>
+
+<p>Possible values for <em>status</em>: "new", "verified", or "rejected".</p>
+
+<p>All other search parameters must be an ID.</p>
+
+<p>Possible values for <em>order_by</em>: "category", "level", "platform", "region", "emulated", "date",
+"submitted", "status", "game", or "verify-date", with the default being "game".</p>
+
+<p>Possible values for <em>sort_direction</em>: "desc" or "asc", with the default being "asc".</p>
+
+<p><span class="flag purple">NOTE</span>  Not specifying any filter probably leads to the request eventually crashing, leading to incomplete data.</p>
+
+<p><span class="flag purple">NOTE</span>  While <code><a href="../../Srcom/Run.html">Run</a></code>s are very large objects, using the maximum page size does usually work, and
+so that is what is defaulted to. If your requests are timing out or taking too long, try setting
+a smaller page size.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/v0.1.0/src/srcr/apis/runs.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find_by_id(id:String):Srcom::Run-class-method">
+      <div class="signature">
+        
+        def self.<strong>find_by_id</strong>(id : String) : <a href="../../Srcom/Run.html">Srcom::Run</a>
+
+        <a class="method-permalink" href="#find_by_id(id:String):Srcom::Run-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Gets a <code><a href="../../Srcom/Run.html">Run</a></code> given its <em>id</em>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/v0.1.0/src/srcr/apis/runs.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reject(id:String,reason:String,api_key:String):Srcom::SimpleRun-class-method">
+      <div class="signature">
+        
+        def self.<strong>reject</strong>(id : String, reason : String, api_key : String) : <a href="../../Srcom/SimpleRun.html">Srcom::SimpleRun</a>
+
+        <a class="method-permalink" href="#reject(id:String,reason:String,api_key:String):Srcom::SimpleRun-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Rejects the <code><a href="../../Srcom/Run.html">Run</a></code> with the given <em>id</em> for the given <em>reason</em> as the user authenticated
+using the given <em>api_key</em>, returning the newly verified run if successful.</p>
+
+<p><span class="flag purple">NOTE</span>  Obviously the authenticated user must be a moderator for the game the run was submitted
+to, or a global moderator.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/v0.1.0/src/srcr/apis/runs.cr#L131" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="submit(run:Srcom::Run::Submission,api_key:String):Srcom::SimpleRun-class-method">
+      <div class="signature">
+        
+        def self.<strong>submit</strong>(run : <a href="../../Srcom/Run/Submission.html">Srcom::Run::Submission</a>, api_key : String) : <a href="../../Srcom/SimpleRun.html">Srcom::SimpleRun</a>
+
+        <a class="method-permalink" href="#submit(run:Srcom::Run::Submission,api_key:String):Srcom::SimpleRun-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Submits a <code><a href="../../Srcom/Run/Submission.html">Run::Submission</a></code> to speedrun.com in the name of the user authenticated
+with the given <em>api_key</em>, returning the newly submitted run as a <code><a href="../../Srcom/SimpleRun.html">SimpleRun</a></code> if the
+submission was successful.</p>
+
+<p>While most fields of a <code><a href="../../Srcom/Run/Submission.html">Run::Submission</a></code> are optional it is highly recommended to fill out
+as many of them as possible.</p>
+
+<p><span class="flag purple">NOTE</span>  It is very important to respect the notes listed for <code><a href="../../Srcom/Run/Submission.html#new(category:String,times:Hash(String,Float64%7CTime::Span),level:String?=nil,date:Time?=nil,region:String?=nil,platform:String?=nil,verified:Bool=false,players:Array(Submission::Player)?=nil,emulated:Bool=false,video:String?=nil,comment:String?=nil,splitsio:String?=nil,variables:Hash(String,Submission::Variable)?=nil)-class-method">Run::Submission.new</a></code>!</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/v0.1.0/src/srcr/apis/runs.cr#L104" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="verify(id:String,api_key:String):Srcom::SimpleRun-class-method">
+      <div class="signature">
+        
+        def self.<strong>verify</strong>(id : String, api_key : String) : <a href="../../Srcom/SimpleRun.html">Srcom::SimpleRun</a>
+
+        <a class="method-permalink" href="#verify(id:String,api_key:String):Srcom::SimpleRun-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Verifies the <code><a href="../../Srcom/Run.html">Run</a></code> with the given <em>id</em> as the user authenticated using the given <em>api_key</em>,
+returning the newly verified run if successful.</p>
+
+<p><span class="flag purple">NOTE</span>  Obviously the authenticated user must be a moderator for the game the run was submitted
+to, or a global moderator.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/shardlab/srcr/blob/v0.1.0/src/srcr/apis/runs.cr#L117" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
