@@ -5,7 +5,7 @@ struct Srcom::User
   @rel : String? # Present in certain contexts, but never relevant
   property id : String
   property names : User::Name
-  property pronouns : String
+  property pronouns : String?
   property weblink : String
   @[JSON::Field(key: "name-style")]
   property name_style : User::NameStyle
